@@ -55,6 +55,8 @@ def sign_up():
             username=form.data['username'],
             first_name=form.data['first_name'].capitalize(),
             last_name=form.data['last_name'].capitalize(),
+            city=form.data['city'],
+            state=form.data['state'],
             email=form.data['email'],
             password=form.data['password']
         )

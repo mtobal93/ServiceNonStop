@@ -27,8 +27,8 @@ class Company(db.Model):
     set_hours = db.Column(String(3), nullable=True)
     mon_open = db.Column(String(4), nullable=True)
     mon_close = db.Column(String(4), nullable=True)
-    tue_open = db.Column(String(4), nullable=True)
-    tue_close = db.Column(String(4), nullable=True)
+    tues_open = db.Column(String(4), nullable=True)
+    tues_close = db.Column(String(4), nullable=True)
     wed_open = db.Column(String(4), nullable=True)
     wed_close = db.Column(String(4), nullable=True)
     thu_open = db.Column(String(4), nullable=True)
@@ -75,8 +75,8 @@ class Company(db.Model):
             "hours": {
                 "mon_open": self.mon_open,
                 "mon_close": self.mon_close,
-                "tue_open": self.tue_open,
-                "tue_close": self.tue_close,
+                "tues_open": self.tues_open,
+                "tues_close": self.tues_close,
                 "wed_open": self.wed_open,
                 "wed_close": self.wed_close,
                 "thu_open": self.thu_open,
