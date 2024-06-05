@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from flask_login import login_required
-from app.models import User
+from app.models import User, Company, Review, Image
 
 user_routes = Blueprint('users', __name__)
 
@@ -22,4 +22,19 @@ def user(id):
     Query for a user by id and returns that user in a dictionary
     """
     user = User.query.get(id)
-    return user.to_dict()
+    user_dict = user.to_dict()
+
+    user_image = Image.query.filter(Image.imageable_type == "user" and Image.imageable_id == id).first()
+    user_profile_pic = {
+        "id": user_image.id,
+        "image_url": user_image.url
+    }
+    review_counts = Review.query.filter(Review.user_id == id).count()
+    image_counts = Image.query.filter(Image.uploaded_by == id).filter(Image.imageable_type == 'user').count()
+
+
+    user_dict["user_profile_pic"] = user_profile_pic
+    user_dict['review_counts'] = review_counts
+    user_dict["image_counts"] = image_counts
+
+    return user_dict)
