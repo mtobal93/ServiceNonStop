@@ -81,7 +81,7 @@ def get_company_by_company_id(id):
             {
                 "id": image.id,
                 "url": image.url,
-                "uploaded_by": image.uploaded_by_id,
+                "uploaded_by_id": image.uploaded_by_id,
             }
             for image in review_images
         ]
@@ -439,7 +439,8 @@ def create_review(company_id):
             return review.to_dict()
     return form.errors, 401
 
-@company_routes.route('/<int:id>/edit', methods=["PUT"])
+
+@company_routes.route("/<int:id>/edit", methods=["PUT"])
 @login_required
 def update_company(id):
 
@@ -449,38 +450,38 @@ def update_company(id):
         return {"message": "Company was not found"}, 404
 
     if company.owner_id != current_user.id:
-        return {'message': 'This is not owned by you!'}, 401
+        return {"message": "This is not owned by you!"}, 401
 
     form = CreateCompanyForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
+    form["csrf_token"].data = request.cookies["csrf_token"]
 
     if form.validate_on_submit():
-        company.category_id = form.data['category_id']
-        company.name = form.data['name']
-        company.email = form.data['email']
-        company.phone = form.data['phone']
-        company.address = form.data['address']
-        company.city = form.data['city']
-        company.state = form.data['state']
-        company.zip_code = form.data['zip_code']
-        company.website = form.data['website']
-        company.description = form.data['description']
-        company.price = form.data['price']
-        company.set_hours=form.data['set_hours']
-        company.mon_open=form.data['mon_open']
-        company.mon_close=form.data['mon_close']
-        company.tues_open=form.data['tues_open']
-        company.tues_close=form.data['tues_close']
-        company.wed_open=form.data['wed_open']
-        company.wed_close=form.data['wed_close']
-        company.thu_open=form.data['thu_open']
-        company.thu_close=form.data['thu_close']
-        company.fri_open=form.data['fri_open']
-        company.fri_close=form.data['fri_close']
-        company.sat_open=form.data['sat_open']
-        company.sat_close=form.data['sat_close']
-        company.sun_open=form.data['sun_open']
-        company.sun_close=form.data['sun_close']
+        company.category_id = form.data["category_id"]
+        company.name = form.data["name"]
+        company.email = form.data["email"]
+        company.phone = form.data["phone"]
+        company.address = form.data["address"]
+        company.city = form.data["city"]
+        company.state = form.data["state"]
+        company.zip_code = form.data["zip_code"]
+        company.website = form.data["website"]
+        company.description = form.data["description"]
+        company.price = form.data["price"]
+        company.set_hours = form.data["set_hours"]
+        company.mon_open = form.data["mon_open"]
+        company.mon_close = form.data["mon_close"]
+        company.tues_open = form.data["tues_open"]
+        company.tues_close = form.data["tues_close"]
+        company.wed_open = form.data["wed_open"]
+        company.wed_close = form.data["wed_close"]
+        company.thu_open = form.data["thu_open"]
+        company.thu_close = form.data["thu_close"]
+        company.fri_open = form.data["fri_open"]
+        company.fri_close = form.data["fri_close"]
+        company.sat_open = form.data["sat_open"]
+        company.sat_close = form.data["sat_close"]
+        company.sun_open = form.data["sun_open"]
+        company.sun_close = form.data["sun_close"]
 
         try:
 
@@ -489,11 +490,12 @@ def update_company(id):
         except Exception as e:
 
             db.session.rollback()
-            return {'message': 'An error occurred while updating the company.'}, 500
+            return {"message": "An error occurred while updating the company."}, 500
 
     return {"errors": form.errors}, 400
 
-@company_routes.route('/<int:id>', methods=["DELETE"])
+
+@company_routes.route("/<int:id>", methods=["DELETE"])
 @login_required
 def delete_company(id):
 
@@ -503,13 +505,12 @@ def delete_company(id):
         return {"message": "Company was not found"}, 404
 
     if company.owner_id != current_user.id:
-        return {'message': 'This is not owned by you!'}, 401
-
+        return {"message": "This is not owned by you!"}, 401
 
     try:
         db.session.delete(company)
         db.session.commit()
-        return { 'message' : 'Successfully Deleted' }, 200
+        return {"message": "Successfully Deleted"}, 200
     except Exception as e:
         db.session.rollback()
-        return {'message': 'An error occurred while deleting the company.'}, 500
+        return {"message": "An error occurred while deleting the company."}, 500
