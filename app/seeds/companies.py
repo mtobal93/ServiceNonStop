@@ -657,7 +657,7 @@ def seed_companies():
     )
 
 
-    brown_brothers_plumbing_and_eating = Company(
+    brown_brothers_plumbing_and_heating = Company(
         #! id 24
         owner_id=3,
         category_id=6,
@@ -775,7 +775,7 @@ def seed_companies():
 
     benavides_welding_works_llc = Company(
         #! id 28
-        owner_id=5,
+        owner_id=9,
         category_id=8,
         name="Benavides Welding Works LLC",
         phone="2147326178",
@@ -798,7 +798,7 @@ def seed_companies():
     )
 
 
-    Quality_power_wash_nyc = Company(
+    quality_power_wash_nyc = Company(
         #! id 29
         owner_id=5,
         category_id=8,
@@ -907,11 +907,11 @@ def seed_companies():
     db.session.add( painting_contractors_of_md )
     db.session.add( certapro_painters_of_delaware )
     db.session.add( kaufy_painting )
-    db.session.add( brown_brothers_plumbing_and_eating )
+    db.session.add( brown_brothers_plumbing_and_heating )
     db.session.add( atlanta_plumbing_and_drain )
     db.session.add( south_coast_welding_and_manufacturing_llc )
     db.session.add( benavides_welding_works_llc )
-    db.session.add( Quality_power_wash_nyc )
+    db.session.add( quality_power_wash_nyc )
     db.session.add( professional_window_cleaning_service_inc )
     db.session.add( bosshogg_industries_demolition_and_removal_services )
 

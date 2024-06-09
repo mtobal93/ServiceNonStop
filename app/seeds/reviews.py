@@ -159,6 +159,20 @@ def seed_reviews():
         review='Clean install!!!',
         stars=4
     )
+    june_rev_3 = Review(
+        #! id 18
+        user_id=5,
+        company_id=22,
+        review='Too beautiful, I cant even believe it',
+        stars=5
+    )
+    june_rev_4 = Review(
+        #! id 19
+        user_id=5,
+        company_id=23,
+        review='Uggghhhhhh, I just freakin love it!!!!',
+        stars=5
+    )
 
     db.session.add(demo_rev_1)
     db.session.add(demo_rev_2)
@@ -180,6 +194,8 @@ def seed_reviews():
     db.session.add(august_rev_3)
     db.session.add(june_rev_1)
     db.session.add(june_rev_2)
+    db.session.add(june_rev_3)
+    db.session.add(june_rev_4)
 
     db.session.commit()
 
