@@ -4,27 +4,42 @@ from sqlalchemy.sql import text
 
 def seed_categories():
     construction = Category(
-        name='Activities'
+        #! id=1
+        name='Construction'
     )
+
     electrician = Category(
-        name='Restaurants'
-        )
+        #! id=2
+        name='Electrician'
+    )
+
     landscaper = Category(
-        name='Travel'
+        #! id=3
+        name='Landscaper'
     )
+
     masonry = Category(
-        name='Services'
-        )
-    painter = Category(
-        name='Veterinarians'
-        )
-    plumbing = Category(
-        name='Shopping'
-        )
-    refrigeration = Category(
-        name='Adoption'
+        #! id-4
+        name='Masonry'
     )
-    more = Category(
+
+    painter = Category(
+        #! id=5
+        name='Painter'
+    )
+
+    plumber = Category(
+        #! id=6
+        name='Plumber'
+    )
+
+    hvac_refrigeration = Category(
+        #! id=7
+        name='HVAC & Refrigeration'
+    )
+
+    other = Category(
+        #! id=8
         name='Other'
     )
 
@@ -34,9 +49,9 @@ def seed_categories():
     db.session.add(landscaper)
     db.session.add(masonry)
     db.session.add(painter)
-    db.session.add(plumbing)
-    db.session.add(refrigeration)
-    db.session.add(more)
+    db.session.add(plumber)
+    db.session.add(hvac_refrigeration)
+    db.session.add(other)
     db.session.commit()
 
 
