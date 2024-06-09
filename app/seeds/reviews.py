@@ -100,7 +100,7 @@ def seed_reviews():
     
     summer_rev_1 = Review(
         #! id 13
-        user_id=5,
+        user_id=10,
         business_id=7,
         review='Technician was a little weird',
         stars=3
@@ -108,7 +108,7 @@ def seed_reviews():
 
     summer_rev_2 = Review(
         #! id 14
-        user_id=5,
+        user_id=10,
         business_id=17,
         review='I love the smell of grass, and love good service!',
         stars=4
@@ -116,10 +116,34 @@ def seed_reviews():
 
     summer_rev_3 = Review(
         #! id 15
-        user_id=5,
+        user_id=10,
         business_id=21,
         review='Thank you all for you great work',
         stars=5
+    )
+
+    august_rev_1 = Review(
+        #! id 13
+        user_id=6,
+        business_id=28,
+        review='I like them and I dont. They have there good days and there bad days',
+        stars=3
+    )
+
+    august_rev_2 = Review(
+        #! id 14
+        user_id=6,
+        business_id=25,
+        review='Service was decent',
+        stars=4
+    )
+
+    august_rev_3 = Review(
+        #! id 15
+        user_id=6,
+        business_id=1,
+        review='They have a good Preventative Maintenance plan',
+        stars=4
     )
 
     db.session.add(demo_rev_1)
@@ -137,6 +161,9 @@ def seed_reviews():
     db.session.add(summer_rev_1)
     db.session.add(summer_rev_2)
     db.session.add(summer_rev_3)
+    db.session.add(august_rev_1)
+    db.session.add(august_rev_2)
+    db.session.add(august_rev_3)
 
     db.session.commit()
 

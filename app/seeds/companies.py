@@ -716,18 +716,18 @@ def seed_companies():
     )
 
 
-    atlanta_plumbing_and_drain = Company(
+    mc_mullens_plumbing_drain_services = Company(
         #! id 26
-        owner_id=7,
+        owner_id=6,
         category_id=6,
-        name="Atlanta Plumbing & Drain",
-        phone="4706938389",
-        address="455 Moreland Ave NE Suite 5438",
-        city="Atlanta",
-        state="GA",
-        zip_code="30307",
-        website="https://www.atlplumbingcompany.com/",
-        description="At Atlanta Plumbing & Drain, we're not just a name; we're a commitment to excellence that runs deep within the heart of Atlanta and surrounding areas. Our story begins with a family legacy of master plumbers, united by a shared passion for delivering unparalleled service.",
+        name="Mc Mullen's Plumbing-Drain Services",
+        phone="6093929796",
+        address="5140 Broad St",
+        city="Trenton",
+        state="NJ",
+        zip_code="08620",
+        website="http://www.mcmullensplumbing.com/",
+        description="With over 30 years of experience and licensed plumbers on staff, you can feel good about our work.",
         price="$$$$",
         set_hours="yes",
         mon_open="0700",
