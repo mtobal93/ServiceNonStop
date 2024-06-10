@@ -123,7 +123,7 @@ def seed_reviews():
     )
 
     august_rev_1 = Review(
-        #! id 13 16
+        #! id 16
         user_id=6,
         company_id=28,
         review='I like them and I dont. They have there good days and there bad days',
