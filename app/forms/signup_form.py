@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField
-from wtforms.validators import DataRequired, Email, ValidationError
+from wtforms.validators import DataRequired, ValidationError
 from app.models import User
 
 states = [
@@ -59,23 +59,23 @@ states = [
     ("WY", "WY"),
 ]
 
-def user_exists(form, field):
-    # Checking if user exists
+def user_exists_already(form, field):
+    # Check if user exists
     email = field.data
     user = User.query.filter(User.email == email).first()
     if user:
         raise ValidationError('Email address is already in use.')
 
 
-def password_longer(form, field):
+def password_longer_please(form, field):
     password = field.data
-    if len(password) < 10:
-        raise ValidationError("Password must be at least 10 characters")
+    if len(password) < 6:
+        raise ValidationError("Password must be at least 6 characters")
 class SignUpForm(FlaskForm):
 
-    first_name = StringField("first_name", validators=[DataRequired()])
-    last_name = StringField("last_name", validators=[DataRequired()])
+    first_name = StringField("first name", validators=[DataRequired()])
+    last_name = StringField("last name", validators=[DataRequired()])
     city = StringField("city", validators=[DataRequired()])
     state = SelectField("state", choices=states, validators=[DataRequired()])
-    email = StringField('email', validators=[DataRequired(), user_exists])
-    password = StringField('password', validators=[DataRequired(), password_longer])
+    email = StringField('email', validators=[DataRequired(), user_exists_already])
+    password = StringField('password', validators=[DataRequired(), password_longer_please])
