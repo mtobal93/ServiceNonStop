@@ -11,13 +11,10 @@ class Image(db.Model):
         __table_args__ = {"schema": SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    uploaded_by_id = db.Column(
-        db.Integer, db.ForeignKey(add_prefix_for_prod("user.id"))
-    )
+    uploaded_by_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
     imageable_id = db.Column(db.Integer, nullable=False)
     imageable_type = db.Column(
-        ENUM("user", "review", "company", name="imageable_types"), nullable=False
-    )
+        ENUM("user", "review", "company", name="imageable_types"), nullable=False)
     url = db.Column(db.String(), nullable=False)
     created_at = db.Column(DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(DateTime(timezone=True), onupdate=func.now())

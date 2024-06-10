@@ -45,7 +45,7 @@ class Company(db.Model):
     owner = relationship("User", back_populates="companies")
     category = relationship("Category", back_populates="companies")
     reviews = relationship(
-        "Review", back_populates="companies", cascade="all, delete-orphan"
+        "Review", back_populates="company", cascade="all, delete-orphan"
     )
     images = db.relationship(
         "Image",

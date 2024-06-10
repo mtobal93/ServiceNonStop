@@ -12,7 +12,6 @@ class User(db.Model, UserMixin):
         __table_args__ = {"schema": SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(40), nullable=False, unique=True)
     first_name = db.Column(db.String(255), nullable=False)
     last_name = db.Column(db.String(255), nullable=False)
     city = db.Column(db.String(255), nullable=False)
@@ -31,7 +30,7 @@ class User(db.Model, UserMixin):
     )
 
     reviews = db.relationship(
-        "Review", back_populates="user", cascade="all, delete orphan"
+        "Review", back_populates="user", cascade="all, delete-orphan"
     )
 
     images = db.relationship(
@@ -55,9 +54,10 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             "id": self.id,
-            "username": self.username,
             "first_name": self.first_name,
             "last_name": self.last_name,
+            "city": self.city,
+            "state": self.state,
             "email": self.email,
             "created_at": self.created_at,
         }
