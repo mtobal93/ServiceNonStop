@@ -70,7 +70,7 @@ export const getUserReviewsThunk = (userId) => async (dispatch) => {
     }
 }
 
-export const deleteUserReviewThunk = (reviewId) => await ( dispatch ) => {
+export const deleteUserReviewThunk = (reviewId) => async ( dispatch ) => {
     const res = await fetch(`api/reviews/${reviewId}`, {
         method: "DELETE"
     })
