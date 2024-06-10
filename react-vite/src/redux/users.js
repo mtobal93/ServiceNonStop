@@ -90,16 +90,17 @@ const userReducer = (state = {}, action ) => {
             return {...state, [action.user.id]: action.user}
         }
         case LOAD_USER_IMAGES: {
-            return {...state, [action.user.['images'].id]: action.userImages}
+            return {...state, [action.user['images'].id]: action.userImages}
         }
         case LOAD_USER_REVIEWS: {
             const userReviewsState = {"userReviews": []}
-            userReviewsState['userReviews'] = userReviews
+            userReviewsState['userReviews'] = action.userReviews
             return {...state, userReviewsState}
         }
+        
+        default:
+            return {...state}
     }
-
-
 }
 
 export default userReducer;
