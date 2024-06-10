@@ -123,7 +123,7 @@ def seed_reviews():
     )
 
     august_rev_1 = Review(
-        #! id 13
+        #! id 13 16
         user_id=6,
         company_id=28,
         review='I like them and I dont. They have there good days and there bad days',
@@ -131,7 +131,7 @@ def seed_reviews():
     )
 
     august_rev_2 = Review(
-        #! id 14
+        #! id 17
         user_id=6,
         company_id=25,
         review='Service was decent',
@@ -139,35 +139,35 @@ def seed_reviews():
     )
 
     august_rev_3 = Review(
-        #! id 15
+        #! id 18
         user_id=6,
         company_id=1,
         review='They have a good Preventative Maintenance plan',
         stars=4
     )
     june_rev_1 = Review(
-        #! id 16
+        #! id 19
         user_id=5,
         company_id=2,
         review='Got a new system with an installment plan. I\'m loving this ',
         stars=4
     )
     june_rev_2 = Review(
-        #! id 17
+        #! id 20
         user_id=5,
         company_id=3,
         review='Clean install!!!',
         stars=4
     )
     june_rev_3 = Review(
-        #! id 18
+        #! id 21
         user_id=5,
         company_id=22,
         review='Too beautiful, I cant even believe it',
         stars=5
     )
     june_rev_4 = Review(
-        #! id 19
+        #! id 22
         user_id=5,
         company_id=23,
         review='Uggghhhhhh, I just freakin love it!!!!',

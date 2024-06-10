@@ -24,7 +24,7 @@ def seed_images():
     )
 
     all_weather_heating_and_cooling_rev_1 = Image(
-        imageable_id=15,
+        imageable_id=18,
         imageable_type='review',
         url='https://s3-media0.fl.yelpcdn.com/bphoto/YODOEXJf9m_ZkqANOACydg/o.jpg',
         uploaded_by_id=6
@@ -52,7 +52,7 @@ def seed_images():
     )
 
     lee_air_conditioning_rev_1 = Image(
-        imageable_id=16,
+        imageable_id=19,
         imageable_type='review',
         url='https://b2449392.smushcdn.com/2449392/wp-content/uploads/2021/10/hvac-system-inside.jpg?lossy=1&strip=1&webp=1',
         uploaded_by_id=5
@@ -73,7 +73,7 @@ def seed_images():
     )
 
     forced_air_mechanical_rev_1 = Image(
-        imageable_id=16,
+        imageable_id=20,
         imageable_type='review',
         url='https://www.safeatworkca.com/siteassets/images/open-graph/adobestock_178405572-walkinfreezer-og.jpg',
         uploaded_by_id=5
@@ -115,10 +115,10 @@ def seed_images():
     )
 
     commercial_air_refrigeration_and_equipment_services_rev_1 = Image(
-        imageable_id=16,
+        imageable_id=2,
         imageable_type='review',
-        url='https://www.safeatworkca.com/siteassets/images/open-graph/adobestock_178405572-walkinfreezer-og.jpg',
-        uploaded_by_id=5
+        url='https://advancedairtech.net/wp-content/uploads/2018/09/advanced-air-heater-repair-e1539539144313.jpg',
+        uploaded_by_id=1
     )
 
     hmd_construction_and_development_comp_1 = Image(
@@ -254,7 +254,7 @@ def seed_images():
     )
 
     certapro_painters_of_delaware_rev_1 = Image(
-        imageable_id=18,
+        imageable_id=21,
         imageable_type='review',
         url='https://www.nipponpaint.co.in/wp-content/uploads/2023/03/2-Geometric-Shapes-1024x576.jpg',
         uploaded_by_id=5
@@ -268,7 +268,7 @@ def seed_images():
     )
 
     kaufy_painting_rev_1 = Image(
-        imageable_id=19,
+        imageable_id=22,
         imageable_type='review',
         url='https://i.pinimg.com/originals/e2/86/ec/e286ecf5198155108d418c930efb8fa8.jpg',
         uploaded_by_id=5
@@ -289,7 +289,7 @@ def seed_images():
     )
 
     atlanta_plumbing_and_drain_rev_1 = Image(
-        imageable_id=14,
+        imageable_id=17,
         imageable_type='review',
         url='https://whoapro.io/cdn-cgi/image/width=3840,quality=75,format=avif/https://d37zyl8vccu3u7.cloudfront.net/images/hero/renamed/Plumbers.webp',
         uploaded_by_id=6
