@@ -33,7 +33,7 @@ export const removeUserReview = ( reviewId ) => (
 
 //! Thunk
 
-export const getUser = ( userId ) => async ( dispatch ) => {
+export const getUserThunk = ( userId ) => async ( dispatch ) => {
     const res = await fetch(`api/users/${userId}`,)
 
     if (!res.ok) {
@@ -45,7 +45,7 @@ export const getUser = ( userId ) => async ( dispatch ) => {
     }
 }
 
-export const getUserImages = ( userId ) => async ( dispatch ) => {
+export const getUserImagesThunk = ( userId ) => async ( dispatch ) => {
     const res = await fetch(`api/users/${userId}/images/all`)
 
     if(!res.ok) {
@@ -56,3 +56,50 @@ export const getUserImages = ( userId ) => async ( dispatch ) => {
         return userImages
     }
 }
+
+export const getUserReviewsThunk = (userId) => async (dispatch) => {
+    const res = await fetch(`api/${id}/reviews`)
+
+    if (!res.ok) {
+        return res;
+    } else if (res.ok) {
+        const userReviews = await res.json()
+
+        dispatch(loadUserReviews(userReviews))
+        return userReviews
+    }
+}
+
+export const deleteUserReviewThunk = (reviewId) => await ( dispatch ) => {
+    const res = await fetch(`api/reviews/${reviewId}`, {
+        method: "DELETE"
+    })
+
+    if (!res.ok) {
+        return res
+    } else if (res.ok) {
+        dispatch(removeUserReview(reviewId))
+    }
+}
+
+//! Reducer
+
+const userReducer = (state = {}, action ) => {
+    switch(action.type) {
+        case LOAD_USER: {
+            return {...state, [action.user.id]: action.user}
+        }
+        case LOAD_USER_IMAGES: {
+            return {...state, [action.user.['images'].id]: action.userImages}
+        }
+        case LOAD_USER_REVIEWS: {
+            const userReviewsState = {"userReviews": []}
+            userReviewsState['userReviews'] = userReviews
+            return {...state, userReviewsState}
+        }
+    }
+
+
+}
+
+export default userReducer;
