@@ -34,7 +34,7 @@ export const removeUserReview = ( reviewId ) => (
 //! Thunk
 
 export const getUserThunk = ( userId ) => async ( dispatch ) => {
-    const res = await fetch(`api/users/${userId}`,)
+    const res = await fetch(`/api/users/${userId}`,)
 
     if (!res.ok) {
         return res
@@ -46,7 +46,7 @@ export const getUserThunk = ( userId ) => async ( dispatch ) => {
 }
 
 export const getUserImagesThunk = ( userId ) => async ( dispatch ) => {
-    const res = await fetch(`api/users/${userId}/images/all`)
+    const res = await fetch(`/api/users/${userId}/images/all`)
 
     if(!res.ok) {
         return res
@@ -58,7 +58,7 @@ export const getUserImagesThunk = ( userId ) => async ( dispatch ) => {
 }
 
 export const getUserReviewsThunk = (userId) => async (dispatch) => {
-    const res = await fetch(`api/${id}/reviews`)
+    const res = await fetch(`/api/${id}/reviews`)
 
     if (!res.ok) {
         return res;
@@ -71,7 +71,7 @@ export const getUserReviewsThunk = (userId) => async (dispatch) => {
 }
 
 export const deleteUserReviewThunk = (reviewId) => async ( dispatch ) => {
-    const res = await fetch(`api/reviews/${reviewId}`, {
+    const res = await fetch(`/api/reviews/${reviewId}`, {
         method: "DELETE"
     })
 
