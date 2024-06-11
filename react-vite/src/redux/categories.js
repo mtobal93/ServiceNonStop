@@ -15,6 +15,8 @@ export const getCategoriesThunk = (categories) => async (dispatch) => {
     }
 };
 
+
+
 const categoriesReducer = (state = {}, action) => {
     switch (action.type) {
         case LOAD_CATEGORIES: {
