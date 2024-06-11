@@ -9,49 +9,49 @@ const DELETE_COMPANY = 'companies/delete_company'
 export const loadAllCompanies = ( companies ) => (
     {
         type: LOAD_ALL_COMPANIES,
-        payload: companies
+        companies
     }
 )
 
 export const loadACompany = ( company ) => (
     {
         type: LOAD_A_COMPANY,
-        payload: company
+        company
     }
 )
 
 export const loadCurrCompanies = ( companies ) => (
     {
         type: LOAD_CURR_COMPANIES,
-        payload: companies
+        companies
     }
 )
 
 export const createCompany = ( newCompany ) => (
     {
         type: CREATE_COMPANY,
-        payload: newCompany
+        newCompany
     }
 )
 
 export const createCompanyImages = ( post ) => (
     {
         type: CREATE_COMPANY_IMAGES,
-        payload: post
+        post
     }
 )
 
 export const updateTheCompany = ( updatedCompany ) => (
     {
         type: UPDATE_COMPANY,
-        payload: updatedCompany
+        updatedCompany
     }
 )
 
 export const deleteCompany = ( companyId ) => (
     {
         type: DELETE_COMPANY,
-        payload: companyId
+        companyId
     }
 )
 

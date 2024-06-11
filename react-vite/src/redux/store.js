@@ -9,13 +9,18 @@ import sessionReducer from "./session";
 import userReducer from "./users";
 import categoriesReducer from "./categories";
 import companiesReducer from "./companies";
-
+import imagesReducer from "./images.js";
+import reviewsReducer from "./reviews";
+import searchReducer from "./search.js";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   users: userReducer,
   categories: categoriesReducer,
-  companies: combineReducers,
+  companies: companiesReducer,
+  images: imagesReducer,
+  reviews: reviewsReducer,
+  search: searchReducer,
 });
 
 let enhancer;

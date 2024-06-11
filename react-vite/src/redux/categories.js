@@ -2,7 +2,7 @@ const LOAD_CATEGORIES = "categories/load_categories";
 
 const loadCategories = (categories) => ({
     type: LOAD_CATEGORIES,
-    payload: categories,
+    categories,
 });
 
 export const getCategoriesThunk = (categories) => async (dispatch) => {
