@@ -58,7 +58,7 @@ export const getUserImagesThunk = ( userId ) => async ( dispatch ) => {
 }
 
 export const getUserReviewsThunk = (userId) => async (dispatch) => {
-    const res = await fetch(`/api/${id}/reviews`)
+    const res = await fetch(`/api/${userId}/reviews`)
 
     if (!res.ok) {
         return res;

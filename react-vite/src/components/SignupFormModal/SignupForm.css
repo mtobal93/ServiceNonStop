@@ -1,0 +1,17 @@
+.landSModal {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.landSModal input {
+    margin: 10px 0;
+}
+
+.landSModal button {
+    margin: 10px 0;
+}
+
+.landSModal select {
+    margin: 10px 0;
+}

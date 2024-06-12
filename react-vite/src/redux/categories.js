@@ -5,7 +5,7 @@ const loadCategories = (categories) => ({
     categories,
 });
 
-export const getCategoriesThunk = (categories) => async (dispatch) => {
+export const getCategoriesThunk = () => async (dispatch) => {
     const res = await fetch(`/api/categories`);
 
     if (res.ok) {
