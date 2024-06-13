@@ -3,43 +3,44 @@ from sqlalchemy.sql import text
 
 
 def seed_categories():
+
+    #! id=1
     construction = Category(
-        #! id=1
         name='Construction'
     )
 
+    #! id=2
     electrician = Category(
-        #! id=2
         name='Electrician'
     )
 
+    #! id=3
     landscaper = Category(
-        #! id=3
         name='Landscaper'
     )
 
+    #! id-4
     masonry = Category(
-        #! id-4
         name='Masonry'
     )
 
+    #! id=5
     painter = Category(
-        #! id=5
         name='Painter'
     )
 
+    #! id=6
     plumber = Category(
-        #! id=6
         name='Plumber'
     )
 
+    #! id=7
     hvac_refrigeration = Category(
-        #! id=7
         name='HVAC & Refrigeration'
     )
 
+    #! id=8
     other = Category(
-        #! id=8
         name='Other'
     )
 

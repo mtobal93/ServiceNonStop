@@ -1,0 +1,59 @@
+.createBizForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 415px;
+  margin: auto;
+  padding-top: 30px;
+  row-gap: 15px;
+  padding-bottom: 30px;
+}
+
+.createBizForm input[type="text"],
+.createBizForm textarea {
+  padding: 5px;
+}
+
+.createBizForm select {
+  padding: 5px 1px;
+}
+
+.errors {
+  color: #c24830;
+  font-weight: 500;
+  margin-top: -14px;
+  margin-left: -1px;
+
+}
+
+.errorsImage {
+  color: #c24830;
+  font-weight: 500;
+}
+
+.imageInput {
+  width: 405px;
+}
+
+.hidden {
+  display: none;
+}
+
+.hoursForm {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(7, 1fr);
+  align-items: center;
+  row-gap: 5px;
+  margin-left: 3px;
+}
+
+@media screen and (max-width: 480px) {
+
+  .createBizForm {
+    width: 90vw;
+  }
+
+  .imageInput {
+    width: 87vw;
+  }
+}

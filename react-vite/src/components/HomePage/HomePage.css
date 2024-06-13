@@ -1,0 +1,135 @@
+.photoHeader {
+    max-width: 100%;
+    height: 550px;
+}
+
+.photoHeader img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.photoHeader::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 550px;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.photoHeaderText {
+    position: relative;
+    left: 8%;
+    bottom: 85%;
+    z-index: 1;
+    padding: 5px;
+    color: #FFFFFF;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.photoHeaderText h1 {
+    font-weight: bold;
+    font-size: 40px;
+    color: #FFFFFF;
+}
+
+.photoHeader button {
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 10px 30px 10px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #FF6969;
+}
+
+.photoHeader button:hover {
+    background-color: #ff9494;
+}
+
+.photoHeader a {
+    color: #FFFFFF;
+}
+
+.photoHeaderCredit {
+    position: relative;
+    /* left: 3.4%; */
+    left: 8%;
+    bottom: 50%;
+    z-index: 1;
+    padding: 5px;
+    color: #FFFFFF;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.categoryDots {
+    height: 200px;
+    padding: 10px 20px 50px;
+    border: #3C486B 1px solid;
+    border-radius: 15px;
+    background-color: #3C486B;
+    margin: 30px;
+}
+
+.categoryContainer {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: fit-content;
+    padding-top: 15px;
+
+}
+
+.categoryStuff {
+    color: white;
+    font-weight: 300;
+    position: relative;
+    margin: auto;
+    font-size: 18px;
+    z-index: 2;
+    bottom: 80px;
+}
+
+.categoryContainer div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.categoriesHeader {
+    margin: 30px 0 0;
+    text-align: center;
+    font-size: 38px;
+}
+
+
+@media screen and (max-width: 480px) {
+    .categoryContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .photoHeaderText {
+        width: 80vw;
+        bottom: 65%;
+    }
+
+    .photoHeaderCredit {
+        bottom: 55%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .categoryContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .categoryContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
