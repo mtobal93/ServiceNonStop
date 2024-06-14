@@ -6,6 +6,7 @@ import { thunkLogout } from "../../redux/session";
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
+import { BsFilePersonFill } from "react-icons/bs";
 
 function ProfileButton() {
     const navigate = useNavigate();
@@ -43,9 +44,22 @@ function ProfileButton() {
 
     return (
         <>
+            {!user ||
+                (user?.message === "user: null" && (
+                    <div className="rightNavButtons">
+                        <OpenModalButton
+                            buttonText="Log In"
+                            modalComponent={<LoginFormModal />}
+                        />
+                        <OpenModalButton
+                            buttonText="Sign Up"
+                            modalComponent={<SignupFormModal />}
+                        />
+                    </div>
+                ))}
             <div onClick={toggleMenu} style={{ cursor: "pointer" }}>
                 {" "}
-                {user.user_image_url ? (
+                {user?.user_image_url ? (
                     <img className="profileAvatar" src={user.user_image_url} />
                 ) : (
                     <img
@@ -57,7 +71,7 @@ function ProfileButton() {
             {showMenu && (
                 <div className="dropdown">
                     <ul className={"profile-dropdown"} ref={ulRef}>
-                        {user ? (
+                        {user || user?.message !== "user: null" ? (
                             <>
                                 <div
                                     className="profiledropdownoptions"
@@ -66,8 +80,30 @@ function ProfileButton() {
                                             closeMenu();
                                     }}
                                 >
-                                    <FaUserCircle />
+                                    <BsFilePersonFill />
                                     &nbsp; About Me
+                                </div>
+                                <hr />
+                                <div
+                                    className="profiledropdownoptions"
+                                    onClick={() => {
+                                        navigate("/companies/new"),
+                                            closeMenu();
+                                    }}
+                                >
+                                    <i className="fa-solid fa-store" />
+                                    &nbsp; Add a Company
+                                </div>
+                                <hr />
+                                <div
+                                    className="profiledropdownoptions"
+                                    onClick={() => {
+                                        navigate("/companies/current"),
+                                            closeMenu();
+                                    }}
+                                >
+                                    <i className="fa-solid fa-pen-to-square" />
+                                    &nbsp; Manage Companies
                                 </div>
                                 <hr />
                                 <div

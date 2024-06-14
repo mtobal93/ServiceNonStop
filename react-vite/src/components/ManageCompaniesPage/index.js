@@ -1,4 +1,4 @@
-import ManageBusinessPage from "./ManageBusinessPage";
+import ManageCompanyPage from "./ManageCompanyPage";
 
 
-export default ManageBusinessPage;
+export default ManageCompanyPage;

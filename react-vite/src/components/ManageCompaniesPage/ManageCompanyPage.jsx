@@ -65,6 +65,7 @@ function ManageCompanyPage() {
     }
   }
 
+
   const reviewsExists = (review) => {
     if (review === 1) {
       return '(' + review + ' ' + 'review' + ')'
@@ -136,7 +137,7 @@ function ManageCompanyPage() {
                 </span>
               </Link>
               <div className="manbutton">
-                <ManageBizButton company={company} />
+                <ManageCompanyButton company={company} />
               </div>
             </div>
           ))

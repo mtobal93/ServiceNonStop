@@ -12,6 +12,7 @@ import companiesReducer from "./companies";
 import imagesReducer from "./images.js";
 import reviewsReducer from "./reviews";
 import searchReducer from "./search.js";
+import mapsReducer from "./maps.js"
 
 const rootReducer = combineReducers({
   session: sessionReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   images: imagesReducer,
   reviews: reviewsReducer,
   search: searchReducer,
+  maps: mapsReducer
 });
 
 let enhancer;
