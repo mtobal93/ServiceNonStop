@@ -12,7 +12,7 @@ export const getGeocode = (address, city, state) => async (dispatch) => {
     const regex = /[^a-zA-Z0-9\s]/g;
     const gmApiAddress = address?.replaceAll(regex, "");
 
-    const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${gmApiAddress}%20${city}%20${state}&key=AIzaSyAEcZkMYe-1Xxq9xSXW90nS1htD_XTUv4w`)
+    const res = await fetch(``)
 
     if (res.ok) {
         const geocode = await res.json();
