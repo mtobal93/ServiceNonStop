@@ -44,11 +44,11 @@ function SingleCompanyPage() {
     }, []);
 
     const reviewStars = (numStars) => {
-        let tools_filled = [];
+        let toolsFilled = [];
         let toolsNotFilled = []
 
         for (let i = 0; i < parseInt(numStars); i++) {
-            tools_filled.push(<span className="paws-filled"><i className="fa-solid fa-paw"></i> </span>)
+            toolsFilled.push(<span className="paws-filled"><i className="fa-solid fa-paw"></i> </span>)
         }
 
         let remaining_paws = 5 - numStars
@@ -57,11 +57,11 @@ function SingleCompanyPage() {
         if (remainder > 0.3 && remainder < 0.79) {
             toolsNotFilled.push(<span className="paws-half-span"><img className="paws-half" src='../../images/half-paw.png' /></span>)
         } else if (remainder > 0.79) {
-            tools_filled.push(<span className="paws-filled"><i className="fa-solid fa-paw"></i> </span>)
+            toolsFilled.push(<span className="paws-filled"><i className="fa-solid fa-paw"></i> </span>)
         }
 
         if (toolsNotFilled.length === 0) {
-            for (let i = 0; i < (5 - tools_filled.length); i++) {
+            for (let i = 0; i < (5 - toolsFilled.length); i++) {
                 toolsNotFilled.push(<span className="paws-unfilled"><i className="fa-solid fa-hammer"></i> </span>)
             }
         } else {
@@ -71,7 +71,7 @@ function SingleCompanyPage() {
         }
 
 
-        return [tools_filled, toolsNotFilled]
+        return [toolsFilled, toolsNotFilled]
     }
 
     const totalImages = (companyImages, reviewImages) => {

@@ -34,9 +34,9 @@ export const removeImage = (reviewId) => ({
     reviewId
 });
 
-// THUNK
+//! THUNK
 
-export const getCompanyReviews = (companyId) => async (dispatch) => {
+export const getCompanyReviewsThunk = (companyId) => async (dispatch) => {
     const response = await fetch(`/api/companies/${companyId}/reviews`)
 
     if (response.ok) {
@@ -46,7 +46,7 @@ export const getCompanyReviews = (companyId) => async (dispatch) => {
     }
 }
 
-export const createNewReview = (newReviewData, companyId) => async (dispatch) => {
+export const createNewReviewThunk = (newReviewData, companyId) => async (dispatch) => {
 
     const res = await fetch(`/api/companies/${companyId}/reviews`, {
         method: "POST",
@@ -65,7 +65,7 @@ export const createNewReview = (newReviewData, companyId) => async (dispatch) =>
     }
 };
 
-export const createImage = (newImages) => async (dispatch) => {
+export const createImageThunk = (newImages) => async (dispatch) => {
     const res = await fetch(`/api/images/`, {
         method: "POST",
         body: newImages
@@ -81,7 +81,7 @@ export const createImage = (newImages) => async (dispatch) => {
     }
 };
 
-export const updateReview = (reviewId, review) => async (dispatch) => {
+export const updateReviewThunk = (reviewId, review) => async (dispatch) => {
     const response = await fetch(`/api/reviews/${reviewId}/edit`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -98,7 +98,7 @@ export const updateReview = (reviewId, review) => async (dispatch) => {
     }
 }
 
-export const deleteReview = (reviewId) => async (dispatch) => {
+export const deleteReviewThunk = (reviewId) => async (dispatch) => {
     const response = await fetch(`/api/reviews/${reviewId}`, {
         method: "DELETE"
     })

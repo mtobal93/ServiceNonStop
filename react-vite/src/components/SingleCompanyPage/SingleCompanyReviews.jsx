@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { getBusinessReviews } from "../../redux/reviews";
+import { getCompanyReviews } from "../../redux/reviews";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import UpdateReviewPage from "../ReviewForms/UpdateReviewPage";
-import { fetchSingleBusiness } from "../../redux/businesses";
+import { loadACompanyThunk } from "../../redux/companies";
 import OpenModalButton from "../OpenModalButton";
 import DeleteReviewModal from "../ReviewForms/DeleteReviewModal";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem";
 import SinglePhotoModal from "../SinglePhotoModal/SinglePhotoModal";
 
-function SingleBusinessReviews({ businessId, sessionUser }) {
+function SingleCompanyReviews({ companyId, sessionUser }) {
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const reviews = Object.values(useSelector(state => state.reviews)).sort((a, b) => {
@@ -21,12 +21,12 @@ function SingleBusinessReviews({ businessId, sessionUser }) {
 
     useEffect(() => {
         const runDispatches = async () => {
-            await dispatch(fetchSingleBusiness(businessId)).then(() =>
-                dispatch(getBusinessReviews(businessId))
+            await dispatch(loadACompanyThunk(companyId)).then(() =>
+                dispatch(getCompanyReviews(companyId))
             );
         };
         runDispatches();
-    }, [dispatch, businessId])
+    }, [dispatch, companyId])
 
 
     const lastInitial = (lastName) => {
@@ -35,20 +35,20 @@ function SingleBusinessReviews({ businessId, sessionUser }) {
     }
 
     const reviewStars = (numStars) => {
-        let filled_paws = [];
-        let unfilled_paws = []
+        let toolsFilled = [];
+        let toolsNotFilled = []
 
         for (let i = 0; i < parseInt(numStars); i++) {
-            filled_paws.push(<span className="paws-filled" style={{ fontSize: "medium" }}><i className="fa-solid fa-paw"></i> </span>)
+            toolsFilled.push(<span className="paws-filled" style={{ fontSize: "medium" }}><i className="fa-solid fa-hammer"></i> </span>)
         }
 
-        let remaining_paws = 5 - filled_paws.length
+        let remaining_paws = 5 - toolsFilled.length
 
         for (let i = 0; i < remaining_paws; i++) {
-            unfilled_paws.push(<span className="paws-unfilled" style={{ fontSize: "medium" }}><i className="fa-solid fa-paw"></i> </span>)
+            toolsNotFilled.push(<span className="paws-unfilled" style={{ fontSize: "medium" }}><i className="fa-solid fa-hammer"></i> </span>)
         }
 
-        return [filled_paws, unfilled_paws]
+        return [toolsFilled, toolsNotFilled]
     }
 
     const dateFormat = (date) => {
@@ -83,7 +83,7 @@ function SingleBusinessReviews({ businessId, sessionUser }) {
                         <div className="userName" onClick={() => navigate(`/users/${review.user.id}`)}>{review.user.first_name} {review.user.last_name && lastInitial(review.user.last_name)}</div>
                         <div className="loc">{review.user.city}, {review.user.state}</div>
                         <div className="stats">
-                            <span style={{ fontSize: "small" }}><i className="fa-solid fa-paw" /></span> &nbsp;{review.user.user_num_reviews} &nbsp;&nbsp;&nbsp;
+                            <span style={{ fontSize: "small" }}><i className="fa-solid fa-hammer" /></span> &nbsp;{review.user.user_num_reviews} &nbsp;&nbsp;&nbsp;
                             <span style={{ fontSize: "small" }}><i className="fa-regular fa-image" /></span> &nbsp;{review.user.user_num_images}</div>
                     </div>
                     <p>{review.stars && (reviewStars(review.stars))} &nbsp;&nbsp;{review.created_at && (dateFormat(review.created_at))}</p>
@@ -109,12 +109,12 @@ function SingleBusinessReviews({ businessId, sessionUser }) {
                             <>
                                 <OpenModalButton
                                     buttonText="Edit"
-                                    modalComponent={<UpdateReviewPage reviewId={review.id} businessId={businessId} modalLoad={true} />} />
+                                    modalComponent={<UpdateReviewPage reviewId={review.id} companyId={companyId} modalLoad={true} />} />
                                 &nbsp;
                                 &nbsp;
                                 <OpenModalButton
                                     buttonText="Delete"
-                                    modalComponent={<DeleteReviewModal reviewId={review.id} businessId={businessId} />} />
+                                    modalComponent={<DeleteReviewModal reviewId={review.id} companyId={companyId} />} />
                             </>}
 
                     </div>
@@ -131,4 +131,4 @@ function SingleBusinessReviews({ businessId, sessionUser }) {
     )
 }
 
-export default SingleBusinessReviews
+export default SingleCompanyReviews

@@ -113,7 +113,7 @@ export const createCompanyThunk = ( company ) => async ( dispatch ) => {
     }
 }
 
-export const createCompanyImage = (post) => async (dispatch) => {
+export const createCompanyImageThunk = (post) => async (dispatch) => {
     const res = await fetch(`/api/images/`, {
         method: "POST",
         body: post
