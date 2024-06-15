@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loadACompany } from "../../redux/companies";
+import { loadACompanyThunk } from "../../redux/companies";
 import CreateCompanyPage from "./CompanyForm";
 
 const EditCompanyForm = () => {
@@ -11,7 +11,7 @@ const EditCompanyForm = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadACompany(companyId))
+    dispatch(loadACompanyThunk(companyId))
   }, [dispatch, companyId])
 
   if (!company) return (<>No Company Found</>)

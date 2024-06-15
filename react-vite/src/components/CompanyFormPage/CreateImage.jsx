@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createCompanyImage } from "../../redux/companies";
+import { createCompanyImageThunk } from "../../redux/companies";
 import { useDispatch } from "react-redux"
 // import { useNavigate } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const UploadPicture = () => {
         // aws uploads can be a bit slow—displaying
         // some sort of loading message is a good idea
         setImageLoading(true);
-        await dispatch(createCompanyImage(formData));
+        await dispatch(createCompanyImageThunk(formData));
         // history.push("/images");
     }
 

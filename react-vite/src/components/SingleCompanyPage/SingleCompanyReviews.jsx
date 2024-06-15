@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCompanyReviews } from "../../redux/reviews";
+import { getCompanyReviewsThunk } from "../../redux/reviews";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import UpdateReviewPage from "../ReviewForms/UpdateReviewPage";
@@ -22,7 +22,7 @@ function SingleCompanyReviews({ companyId, sessionUser }) {
     useEffect(() => {
         const runDispatches = async () => {
             await dispatch(loadACompanyThunk(companyId)).then(() =>
-                dispatch(getCompanyReviews(companyId))
+                dispatch(getCompanyReviewsThunk(companyId))
             );
         };
         runDispatches();

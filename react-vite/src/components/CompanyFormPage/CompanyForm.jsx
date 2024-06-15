@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { createCompanyThunk, loadACompany, createCompanyImage, updateCompanyThunk } from "../../redux/companies"
+import { createCompanyThunk, loadACompanyThunk, createCompanyImageThunk, updateCompanyThunk } from "../../redux/companies"
 import "./CreateCompany.css"
 import { stdTimeFormat } from "../../utils"
 
@@ -101,9 +101,9 @@ function CreateCompanyPage({ company, formType }) {
       formData.append("imageable_type", "company"); // Hardcoded for company type
 
       setImageLoading(true);
-      // Dispatch createCompanyImage action with formData
-      await dispatch(createCompanyImage(formData)).then(() => {
-        dispatch(loadACompany(companyId))
+      // Dispatch createCompanyImageThunk action with formData
+      await dispatch(createCompanyImageThunk(formData)).then(() => {
+        dispatch(loadACompanyThunk(companyId))
           .then(() => navigate(`/companies/${companyId}`));
       }).catch((error) => {
         console.error("Error uploading image:", error);
