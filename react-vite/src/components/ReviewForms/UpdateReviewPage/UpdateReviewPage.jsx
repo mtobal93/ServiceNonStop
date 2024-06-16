@@ -1,27 +1,34 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../../../context/Modal";
 import { useState, useEffect } from "react";
-import { updateReviewThunk, getCompanyReviewsThunk } from "../../../redux/reviews";
+import {
+    updateReviewThunk,
+    getCompanyReviewsThunk,
+} from "../../../redux/reviews";
 
-import { fetchSingleBusiness } from "../../../redux/businesses";
+import { loadACompanyThunk } from "../../../redux/companies";
 
-function UpdateReviewPage({ reviewId, businessId }) {
+function UpdateReviewPage({ reviewId, companyId }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
-    const reviewData = useSelector(state => state.reviews[reviewId]);
+    const reviewData = useSelector((state) => state.reviews[reviewId]);
     const [review, setReview] = useState(reviewData?.review);
     const [stars, setStars] = useState(reviewData?.stars);
     const [hover, setHover] = useState(reviewData?.hover);
     const [errors, setErrors] = useState({});
 
     useEffect(() => {
-        let errObj = {}
-        if (!review) errObj.review = "Review is required."
-        if (review && review.length < 85) errObj.review = "Reviews must be at least 85 characters in length.";
-        if (review && review.length > 2000) errObj.review = "Reviews must be 2000 characters in length at most.";
-        if (!stars) errObj.stars = "Paw Rating is required."
+        let errObj = {};
+        if (!review) errObj.review = "Review is required.";
+        if (review && review.length < 20)
+            errObj.review =
+                "Reviews must be at least 20 characters in length.";
+        if (review && review.length > 2000)
+            errObj.review =
+                "Reviews must be 2000 characters in length at most.";
+        if (!stars) errObj.stars = "Service Non Stop rating is required.";
         setErrors(errObj);
-    }, [review, stars])
+    }, [review, stars]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,20 +36,18 @@ function UpdateReviewPage({ reviewId, businessId }) {
 
         const reviewData = {
             review,
-            stars
-        }
+            stars,
+        };
 
         try {
-            await dispatch(updateReviewThunk(reviewId, reviewData))
-            await (dispatch((businessId)))
-            await dispatch(fetchSingleBusiness(businessId))
+            await dispatch(updateReviewThunk(reviewId, reviewData));
+            await dispatch(getCompanyReviewsThunk(companyId));
+            await dispatch(loadACompanyThunk(companyId));
             closeModal();
-
         } catch (error) {
             console.error("Error updating review:", error);
         }
-    }
-
+    };
 
     return (
         <>
@@ -50,13 +55,17 @@ function UpdateReviewPage({ reviewId, businessId }) {
             <form onSubmit={handleSubmit}>
                 <div className="review-fields">
                     <div id="paws-and-descriptions">
-                        <div className='stars-container'>
+                        <div className="stars-container">
                             {[...Array(5)].map((star, index) => {
                                 index += 1;
                                 return (
                                     <div
                                         key={index}
-                                        className={index <= (hover || stars) ? " paws-filled" : " paws-unfilled"}
+                                        className={
+                                            index <= (hover || stars)
+                                                ? " paws-filled"
+                                                : " paws-unfilled"
+                                        }
                                         onClick={() => {
                                             setStars(index);
                                         }}
@@ -67,17 +76,20 @@ function UpdateReviewPage({ reviewId, businessId }) {
                                             setHover(0);
                                         }}
                                     >
-                                        <span><i className="fa-solid fa-paw" /></span>&nbsp;
+                                        <span>
+                                            <i className="fa-solid fa-hammer" />
+                                        </span>
+                                        &nbsp;
                                     </div>
-                                )
+                                );
                             })}
                             <div className="descriptions-container">
                                 {hover == 0 && <span>Select your rating</span>}
-                                {hover == 1 && <span>Pawful!</span>}
-                                {hover == 2 && <span>Less than purrfect</span>}
-                                {hover == 3 && <span>Just OK-9</span>}
-                                {hover == 4 && <span>Purraiseworthy!</span>}
-                                {hover == 5 && <span>Absolutely Pawesome!</span>}
+                                {hover == 1 && <span>Stay Away</span>}
+                                {hover == 2 && <span>Not So Good</span>}
+                                {hover == 3 && <span>Okay</span>}
+                                {hover == 4 && <span>Good Work</span>}
+                                {hover == 5 && (<span>Great and Recommendable</span>)}
                             </div>
                         </div>
                     </div>
@@ -85,19 +97,30 @@ function UpdateReviewPage({ reviewId, businessId }) {
                         id="review-input"
                         value={review}
                         onChange={(e) => setReview(e.target.value)}
-                        placeholder="Write your review here. It must be least 85 characters, but no more than 2,000 characters."
+                        placeholder="Write your review here. It must be least 100 characters, but no more than 2,000 characters."
                         name="review"
                     />
                 </div>
                 <div className="errorsContainer">
-                    {errors.stars && <span className="errors">{errors.stars}</span>}&nbsp;
-                    {errors.review && <span className="errors">{errors.review}</span>}
+                    {errors.stars && (
+                        <span className="errors">{errors.stars}</span>
+                    )}
+                    &nbsp;
+                    {errors.review && (
+                        <span className="errors">{errors.review}</span>
+                    )}
                 </div>
-                <p><button type="submit" disabled={!!Object.values(errors).length}>Update Review</button></p>
-
+                <p>
+                    <button
+                        type="submit"
+                        disabled={!!Object.values(errors).length}
+                    >
+                        Update Review
+                    </button>
+                </p>
             </form>
         </>
-    )
+    );
 }
 
-export default UpdateReviewPage
+export default UpdateReviewPage;

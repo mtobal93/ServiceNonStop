@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import './SingleCompany.css';
 import CompanyDetails from "./CompanyDetails";
 import CompanyContactCard from "./CompanyContactCard";
-import AllPhotosModal from "../AllPhotosModal/AllPhotosModal";
+import ImagesModal from "../ImagesModal/ImagesModal";
 import OpenModalButton from "../OpenModalButton";
 import { getTodaysHours } from "../../utils";
 // import { fetchGeocode } from '../../redux/maps';
@@ -186,11 +186,11 @@ function SingleCompanyPage() {
                             {company.company_images && totalImages(company.company_images, company.review_images) === 1 ? (
                                 <OpenModalButton
                                     buttonText="See 1 photo"
-                                    modalComponent={<AllPhotosModal companyId={companyId} modalLoad={true} />}
+                                    modalComponent={<ImagesModal companyId={companyId} modalLoad={true} />}
                                 />
                             ) : (<OpenModalButton
                                 buttonText={`See all ${totalImages(company.company_images, company.review_images)} photos`}
-                                modalComponent={<AllPhotosModal companyId={companyId} modalLoad={true} />}
+                                modalComponent={<ImagesModal companyId={companyId} modalLoad={true} />}
                             />)
                             }
                         </div>

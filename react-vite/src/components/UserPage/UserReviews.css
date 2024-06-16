@@ -1,0 +1,163 @@
+.review-card {
+    margin: 0 0 20px;
+    padding: 20px;
+    border: rgba(31, 47, 68, 0.3) 1px solid;
+    border-radius: 5px;
+    display: flex;
+    background-color: #FFFBF6;
+
+}
+
+#reviews-container {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.manage-button {
+    padding-left: 10px;
+    padding-bottom: 0px;
+}
+
+.manage-button .biz-review-content {
+    flex: 1;
+}
+
+.business-content {
+    display: grid;
+    width: fit-content;
+    column-gap: 20px;
+    grid-template-areas:
+        "business-image biz-name"
+        "business-image biz-category"
+        "business-image biz-location";
+    align-items: center;
+    grid-auto-rows: 22px;
+}
+
+.business-image {
+    grid-area: business-image;
+    font-size: 60px;
+    width: fit-content;
+    margin-top: 15px;
+}
+
+.formatImage {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    width: 60px;
+    height: 60px;
+}
+
+.biz-name {
+    grid-area: biz-name;
+    font-weight: 600;
+}
+
+.biz-category {
+    grid-area: biz-category;
+}
+
+.biz-location {
+    grid-area: biz-location;
+    font-weight: 500;
+}
+
+/* .business-content > img {
+
+  } */
+
+
+.review-card :hover {
+    cursor: pointer;
+}
+
+.updateRev {
+    margin: auto;
+}
+
+.updateRev button {
+    margin: auto;
+    color: #5f5ba8;
+}
+
+.paws-filled,
+.paws-unfilled {
+    font-size: medium;
+}
+
+.pawBlock {
+    background-color: transparent;
+    width: fit-content;
+    padding: 5px 3px 2px 2px;
+    border-radius: 3px;
+}
+
+.paw-and-date {
+    display: flex;
+    align-content: center;
+    /* flex-direction: row; */
+}
+
+.review-content {
+    padding: 10px 0;
+    width: 500px;
+}
+
+.reviewImagesWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+
+.reviewImagesContainer {
+    width: 100%;
+    height: 225px;
+}
+
+.reviewImages {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+
+    .review-card,
+    .review-content {
+        width: 100%;
+    }
+
+    .review-text {
+        max-inline-size: auto;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    .review-card,
+    .review-content {
+        width: 100%;
+    }
+
+    .review-text {
+        max-inline-size: auto;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .review-card,
+    .review-content {
+        width: 100%;
+    }
+
+    .review-text {
+        max-inline-size: auto;
+    }
+}

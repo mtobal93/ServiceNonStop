@@ -11,7 +11,10 @@ export const removeImage = (imageId) => ({
     imageId,
 });
 
-export const getImagesByCompany = (companyId) => async (dispatch) => {
+
+//! THUNKs
+
+export const getImagesByCompanyIdThunk = (companyId) => async (dispatch) => {
     const response = await fetch(`/api/companies/${companyId}/images`);
 
 
@@ -22,7 +25,7 @@ export const getImagesByCompany = (companyId) => async (dispatch) => {
     }
 };
 
-export const deleteImage = (imageId) => async (dispatch) => {
+export const deleteImageThunk = (imageId) => async (dispatch) => {
     const response = await fetch(`/api/images/${imageId}`, {
         method: "DELETE",
     });

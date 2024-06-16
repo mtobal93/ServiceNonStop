@@ -1,6 +1,6 @@
 import SingleCompanyReviews from "./SingleCompanyReviews";
 import OpenModalButton from "../OpenModalButton";
-import AddPhotosToBusiness from "../AddPhotosToBusiness";
+import AddImageToCompany from "../AddImageToCompany/AddImageToCompany";
 import { stdTimeFormat } from "../../utils";
 import { useSelector } from "react-redux"
 import LoginFormModal from "../LoginFormModal";
@@ -9,7 +9,7 @@ import CompanyMap from "./CompanyMap";
 
 import ShareModal from "../ShareModal";
 
-function CompanyDetails({ company, CompanyId, locationHoursSection, isMobile, isTablet }) {
+function CompanyDetails({ company, companyId, locationHoursSection, isMobile, isTablet }) {
     const sessionUser = useSelector(state => state.session.user)
     const reviews = Object.values(useSelector(state => state.reviews))
     const reviewerIds = reviews.map(review => review.user_id)
@@ -27,15 +27,15 @@ function CompanyDetails({ company, CompanyId, locationHoursSection, isMobile, is
                         {!sessionUser &&
                             <OpenModalButton
                                 buttonText={<>
-                                    <i className="fa-solid fa-paw" /> Write a review</>}
+                                    <i className="fa-solid fa-hammer" /> Write a review</>}
                                 modalComponent={<LoginFormModal />}
                             />
                         }
                         {sessionUser && sessionUser.id !== company.owner_id && !reviewerIds.includes(sessionUser.id) &&
                             <OpenModalButton
                                 buttonText={<>
-                                    <i className="fa-solid fa-paw" /> Write a review</>}
-                                modalComponent={<CreateReviewPage propsBusinessId={CompanyId} modalLoad={true} />}
+                                    <i className="fa-solid fa-hammer" /> Write a review</>}
+                                modalComponent={<CreateReviewPage propsCompanyId={companyId} modalLoad={true} />}
                             />
                         }</span>
                     <span className="bizDeetsButton">{!sessionUser &&
@@ -49,7 +49,7 @@ function CompanyDetails({ company, CompanyId, locationHoursSection, isMobile, is
                             <OpenModalButton
                                 buttonText={<>
                                     <i className="fa-solid fa-camera" /> Add photo</>}
-                                modalComponent={<AddPhotosToBusiness CompanyId={CompanyId} company={company} />}
+                                modalComponent={<AddImageToCompany companyId={companyId} company={company} />}
                             />
                         }</span>
                     <span className="bizDeetsButton">
@@ -60,10 +60,7 @@ function CompanyDetails({ company, CompanyId, locationHoursSection, isMobile, is
                         />
                     </span>
                 </div>
-                {/* <div>
-                    {isMobile && <BusinessContactCard company={company} isMobile={isMobile} />
-                    }
-                </div> */}
+                
             </div>
             {(isTablet || isMobile) && (<div className="bizContactMobile">
                 {company.website &&
@@ -185,7 +182,7 @@ function CompanyDetails({ company, CompanyId, locationHoursSection, isMobile, is
                 {sessionUser?.id !== company.owner_id && company.reviews.num_reviews == 0 ? (
                     <div>Be the first to review!</div>
                 ) : (
-                    <SingleCompanyReviews company={company} CompanyId={CompanyId} sessionUser={sessionUser} />
+                    <SingleCompanyReviews company={company} companyId={companyId} sessionUser={sessionUser} />
                 )}
                 <br />
             </div>

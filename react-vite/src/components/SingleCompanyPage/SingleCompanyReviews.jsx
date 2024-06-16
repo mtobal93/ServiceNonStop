@@ -7,7 +7,7 @@ import { loadACompanyThunk } from "../../redux/companies";
 import OpenModalButton from "../OpenModalButton";
 import DeleteReviewModal from "../ReviewForms/DeleteReviewModal";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem";
-import SinglePhotoModal from "../SinglePhotoModal/SinglePhotoModal";
+import SingleImageModal from "../SingleImageModal/SingleImageModal";
 
 function SingleCompanyReviews({ companyId, sessionUser }) {
     const navigate = useNavigate()
@@ -97,7 +97,7 @@ function SingleCompanyReviews({ companyId, sessionUser }) {
                                         itemText={<><img
                                             className="reviewImages"
                                             src={image.url} /></>}
-                                        modalComponent={<SinglePhotoModal imageUrl={image.url} />} />
+                                        modalComponent={<SingleImageModal imageUrl={image.url} />} />
 
                                 </span>
                             )

@@ -1,176 +1,149 @@
-const LOAD_ALL_COMPANIES = 'companies/load_all_companies'
-const LOAD_A_COMPANY = 'companies/load_a_company'
-const LOAD_CURR_COMPANIES = 'companies/load_curr_companies'
-const CREATE_COMPANY = 'companies/create_company'
-const CREATE_COMPANY_IMAGES = 'companies/create_company_images'
-const UPDATE_COMPANY = 'companies/update_company'
-const DELETE_COMPANY = 'companies/delete_company'
+const LOAD_A_COMPANY = 'companies/LOAD_A_COMPANY'
+const CREATE_COMPANY = 'companies/CREATE_COMPANY'
+const CREATE_COMPANY_IMAGES = 'companies/CREATE_COMPANY_IMAGES'
+const UPDATE_COMPANY = 'companies/UPDATE_COMPANY'
+const LOAD_CURR_COMPANIES = 'companies/LOAD_CURR_COMPANIES'
+const DELETE_COMPANIES = 'companies/DELETE_COMPANIES'
+const LOAD_ALL_COMPANIES = 'companies/LOAD_ALL_COMPANIES'
 
-export const loadAllCompanies = ( companies ) => (
-    {
-        type: LOAD_ALL_COMPANIES,
-        companies
-    }
-)
+export const loadCurrCompanies = (companies) => ({
+    type: LOAD_CURR_COMPANIES,
+    companies
+})
 
-export const loadACompany = ( company ) => (
-    {
-        type: LOAD_A_COMPANY,
-        company
-    }
-)
+export const loadACompany = (company) => ({
+    type: LOAD_A_COMPANY,
+    company
+})
 
-export const loadCurrCompanies = ( companies ) => (
-    {
-        type: LOAD_CURR_COMPANIES,
-        companies
-    }
-)
+export const createCompany = (company) => ({
+    type: CREATE_COMPANY,
+    company
+})
 
-export const createCompany = ( newCompany ) => (
-    {
-        type: CREATE_COMPANY,
-        newCompany
-    }
-)
+export const createCompanyImages = (post) => ({
+    type: CREATE_COMPANY_IMAGES,
+    post
+})
 
-export const createCompanyImages = ( post ) => (
-    {
-        type: CREATE_COMPANY_IMAGES,
-        post
-    }
-)
+export const updateCompany = (company) => ({
+    type: UPDATE_COMPANY,
+    company
+})
 
-export const updateTheCompany = ( updatedCompany ) => (
-    {
-        type: UPDATE_COMPANY,
-        updatedCompany
-    }
-)
+export const deleteCompany = (companyId) => ({
+    type: DELETE_COMPANIES,
+    companyId
+})
+export const loadAllCompanies = (companies) => ({
+    type: LOAD_ALL_COMPANIES,
+    companies
 
-export const deleteCompany = ( companyId ) => (
-    {
-        type: DELETE_COMPANY,
-        companyId
-    }
-)
+})
 
-//! THUNKS
+// THUNK
 
-export const loadAllCompaniesThunk = () => async ( dispatch ) => {
-    const res = await fetch('/api/companies')
+export const loadACompanyThunk = (companyId) => async (dispatch) => {
+    const response = await fetch(`/api/companies/${companyId}`)
 
-    if (!res.ok) {
-        const errors = await res.json()
-        return errors
-    } else if ( res.ok ) {
-        const companies = await res.json()
-        dispatch(loadAllCompanies(companies))
-        return companies
-    }
-}
-
-export const loadACompanyThunk = ( companyId ) => async ( dispatch ) => {
-    const res = await fetch(`/api/companies/${companyId}`)
-
-    if ( !res.ok ) {
-        const errors = await res.json()
-        return errors
-    } else if ( res.ok ) {
-        const company = await res.json()
+    if (response.ok) {
+        const company = await response.json();
         dispatch(loadACompany(company))
         return company
     }
 }
 
-export const loadCurrCompaniesThunk = () => async ( dispatch ) => {
-    const res = await fetch('/api/companies/current')
-
-    if ( !res.ok ) {
-        const errors = await res.json()
-        return errors
-    } else if ( res.ok ) {
-        const companies = await res.json()
-        dispatch(loadCurrCompanies(companies))
-        return companies
-    }
-}
-
-export const createCompanyThunk = ( company ) => async ( dispatch ) => {
-    const res = await fetch(`/api/companies/`, {
+export const createCompanyThunk = (company) => async (dispatch) => {
+    const response = await fetch('/api/companies/', {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify( company )
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(company)
     })
 
-    if ( !res.ok ) {
-        const errors = await res.json()
-        return errors
-    } else if ( res.ok ) {
-        const newCompany = await res.json()
-        dispatch(createCompany(newCompany))
+    if (response.ok) {
+        const newCompany = await response.json();
+        dispatch(createCompany(newCompany));
         return newCompany
+    } else {
+        const errors = await response.json();
+        return errors;
     }
 }
 
 export const createCompanyImageThunk = (post) => async (dispatch) => {
-    const res = await fetch(`/api/images/`, {
+    const response = await fetch(`/api/images/`, {
         method: "POST",
         body: post
     });
 
-
-    if (res.ok) {
-        const post = await res.json();
-        dispatch(createCompanyImages(post));
-
+    if (response.ok) {
+        const resPost = await response.json();
+        dispatch(createCompanyImages(resPost));
     } else {
-        console.log("There was an error making your post!")
+        const errors = await response.json();
+        return errors;
     }
 };
 
-export const updateCompanyThunk = ( company ) => async ( dispatch ) => {
-    const res = await fetch(`/api/companies/${company.id}/edit`, {
+export const updateCompanyThunk = (company) => async (dispatch) => {
+    const response = await fetch(`/api/companies/${company.id}/edit`, {
         method: "PUT",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify( company )
-    })
-
-    if ( !res.ok ) {
-        const errors = await res.json()
-        return errors
-    } else if ( res.ok ) {
-        const updatedCompany = await res.json()
-        dispatch(updateTheCompany(updatedCompany))
-
-        return updatedCompany
-    }
-} 
-
-export const deleteCompanyThunk = ( companyId ) => async ( dispatch ) => {
-    const res = await fetch(`/api/companies/${companyId}`, {
-        method: "DELETE"
-    })
-
-    if ( !res.ok ) {
-        const errors = await res.json()
-        return errors
-    } else if ( res.ok ) {
-        dispatch(deleteCompany(companyId))
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(company)
+    });
+    if (response.ok) {
+        const updatedComp = await response.json();
+        dispatch(updateCompany(updatedComp));
+        return updatedComp;
+    } else {
+        const errors = await response.json();
+        return errors;
     }
 }
 
-//! REDUCER
+export const loadCurrCompaniesThunk = () => async (dispatch) => {
+    const response = await fetch(`/api/companies/current`)
 
-const companiesReducer = ( state = {}, action) => {
+    if (response.ok) {
+        const companies = await response.json();
+        dispatch(loadCurrCompanies(companies))
+        return companies
+    } else {
+        const errors = await response.json()
+        return errors;
+    }
+}
+
+export const deleteCompanyThunk = (companyId) => async (dispatch) => {
+    const response = await fetch(`/api/companies/${companyId}`, {
+        method: "DELETE"
+    })
+
+    if (response.ok) {
+        dispatch(deleteCompany(companyId));
+    } else {
+        const errors = await response.json();
+        return errors;
+    }
+}
+
+export const loadAllCompaniesThunk = () => async (dispatch) => {
+    const response = await fetch('/api/companies')
+
+    if (response.ok) {
+        const companies = await response.json();
+        dispatch(loadAllCompanies(companies))
+        return companies
+    } else {
+        const errors = await response.json();
+        return errors;
+    }
+}
+
+// REDUCER
+
+const companiesReducer = (state = {}, action) => {
     switch (action.type) {
-        case LOAD_ALL_COMPANIES: {
-            const companiesState = {...state}
-            action.companies.companies.forEach(company => {
-                companiesState[company.id] = company;
-            })
-            return companiesState
-        }
         case LOAD_A_COMPANY: {
             const companyState = {}
             action.company.company.forEach(company => {
@@ -178,12 +151,12 @@ const companiesReducer = ( state = {}, action) => {
             })
             return companyState
         }
-        case LOAD_CURR_COMPANIES: {
-            const companiesState = {}
+        case LOAD_ALL_COMPANIES: {
+            const companyState = { ...state }
             action.companies.companies.forEach(company => {
-                companiesState[company.id] = company;
+                companyState[company.id] = company;
             })
-            return companiesState
+            return companyState
         }
         case CREATE_COMPANY: {
             const companyState = {}
@@ -195,7 +168,14 @@ const companiesReducer = ( state = {}, action) => {
             imageState["images"] = [action.post.image]
             return imageState
         }
-        case DELETE_COMPANY: {
+        case LOAD_CURR_COMPANIES: {
+            const companyState = {}
+            action.companies.companies.forEach(company => {
+                companyState[company.id] = company;
+            })
+            return companyState
+        }
+        case DELETE_COMPANIES: {
             const newState = { ...state }
             delete newState[action.companyId]
             return newState

@@ -91,7 +91,7 @@ function CreateReviewPage({ companyId: propCompanyId, modalLoad }) {
     useEffect(() => {
         let errObj = {}
         if (!review) errObj.review = "Review is required."
-        if (review && review.length < 100) errObj.review = "Reviews must be at least 85 characters in length.";
+        if (review && review.length < 20) errObj.review = "Reviews must be at least 20 characters in length.";
         if (review && review.length > 2000) errObj.review = "Reviews must be 2000 characters in length at most.";
         if (!stars) errObj.stars = "Service Non Stop rating is required."
         setErrors(errObj);
@@ -146,7 +146,7 @@ function CreateReviewPage({ companyId: propCompanyId, modalLoad }) {
                             id="review-input"
                             value={review}
                             onChange={(e) => setReview(e.target.value)}
-                            placeholder="Write your review here. It must be least 100 characters, but no more than 2,000 characters."
+                            placeholder="Write your review here. It must be least 20 characters, but no more than 2,000 characters."
                             name="review"
                         />
                     </div>
@@ -176,10 +176,10 @@ function CreateReviewPage({ companyId: propCompanyId, modalLoad }) {
             {
                 errors.message == 'forbidden' &&
                 <div className='custom-error-page'>
-                    <h1>Bad dog!</h1>
+                    <h1>Your Not Allowed To Post!</h1>
 
                     <NavLink to={companyPageURL}>You do not have this access to this action. Return to the companies page by clicking here.</NavLink> <br />
-                    <img src="../../../images/icons/poop.png" alt="dog pooping on chair" />
+                    <img src="../../../images/icons/notAllowed.png" alt="Mad Man" />
                 </div>
             }
             

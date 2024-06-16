@@ -1,106 +1,107 @@
-const LOAD_USER = "users/load_user"
-const LOAD_USER_IMAGES = "users/load_user_images"
-const LOAD_USER_REVIEWS = "users/load_user_reviews"
-const DELETE_USER_REVIEW = "users/delete_user_review"
+const LOAD_USER = "users/LOAD_USER";
+const LOAD_USER_IMAGES = "users/LOAD_USER_IMAGES";
+const LOAD_USER_REVIEWS = "users/LOAD_USER_REVIEWS";
+const DELETE_USER_REVIEW = "users/DELETE_USER_REVIEW";
 
-export const loadUser = (user) => (
-    {
+export const loadUser = (user) =>
+    // console.log("hitting action"),
+    ({
         type: LOAD_USER,
-        payload: user
-    }
-)
+        user,
+    });
 
-export const loadUserImages = ( userImages ) => (
-    {
-        type: LOAD_USER_IMAGES,
-        payload: userImages
-    }
-)
+export const loadUserPhotos = (userImages) =>
+    // console.log("hitting action"),
+    ({
+        type: LOAD_USER,
+        userImages,
+    });
 
-export const loadUserReviews = ( userReviews ) => (
-    {
-        type: LOAD_USER_REVIEWS,
-        payload: userReviews
-    }
-)
+export const loadUserReviews = (userReviews) => ({
+    type: LOAD_USER_REVIEWS,
+    userReviews,
+});
 
-export const removeUserReview = ( reviewId ) => (
-    {
-        type: DELETE_USER_REVIEW,
-        payload: reviewId
-    }
-)
+export const removeUserReview = (reviewId) => ({
+    type: DELETE_USER_REVIEW,
+    reviewId,
+});
 
-//! Thunk
+// THUNK
 
-export const getUserThunk = ( userId ) => async ( dispatch ) => {
-    const res = await fetch(`/api/users/${userId}`,)
-
-    if (!res.ok) {
-        return res
-    } else if (res.ok ){
-        const user = await res.json();
-        dispatch(loadUser(user));
-        return user
-    }
-}
-
-export const getUserImagesThunk = ( userId ) => async ( dispatch ) => {
-    const res = await fetch(`/api/users/${userId}/images/all`)
-
-    if(!res.ok) {
-        return res
-    } else if (res.ok) {
-        const userImages = await res.json()
-        dispatch(loadUserImages(userImages))
-        return userImages
-    }
-}
-
-export const getUserReviewsThunk = (userId) => async (dispatch) => {
-    const res = await fetch(`/api/${userId}/reviews`)
+export const getUserThunk = (userId) => async (dispatch) => {
+    const res = await fetch(`/api/users/${userId}`);
+    // console.log("hitting thunk in users")
 
     if (!res.ok) {
         return res;
     } else if (res.ok) {
-        const userReviews = await res.json()
-
-        dispatch(loadUserReviews(userReviews))
-        return userReviews
+        const user = await res.json();
+        dispatch(loadUser(user));
+        return user;
     }
-}
+};
 
-export const deleteUserReviewThunk = (reviewId) => async ( dispatch ) => {
-    const res = await fetch(`/api/reviews/${reviewId}`, {
-        method: "DELETE"
-    })
+export const getUserImagesThunk = (userId) => async (dispatch) => {
+    const res = await fetch(`/api/users/${userId}/images/all`);
+    // console.log("hitting thunk in users")
 
     if (!res.ok) {
-        return res
+        return res;
     } else if (res.ok) {
-        dispatch(removeUserReview(reviewId))
+        const userImages = await res.json();
+        dispatch(loadUser(userImages));
+        return userImages;
     }
-}
+};
 
-//! Reducer
+export const getUserReviewsThunk = (userId) => async (dispatch) => {
+    const res = await fetch(`/api/users/${userId}/reviews`);
+    // console.log("hitting thunk in users")
 
-const userReducer = (state = {}, action ) => {
-    switch(action.type) {
+    if (!res.ok) {
+        return res;
+    } else if (res.ok) {
+        const userReviews = await res.json();
+        dispatch(loadUserReviews(userReviews));
+        return userReviews;
+    }
+};
+
+export const deleteUserReviewThunk = (reviewId) => async (dispatch) => {
+    const res = await fetch(`/api/reviews/${reviewId}`, {
+        method: "DELETE",
+    });
+    if (!res.ok) {
+        return res;
+    } else if (res.ok) {
+        dispatch(removeUserReview(reviewId));
+    }
+};
+
+// REDUCER
+
+const userReducer = (state = {}, action) => {
+    // console.log("hitting reducer")
+    switch (action.type) {
         case LOAD_USER: {
-            return {...state, [action.user.id]: action.user}
+            return { ...state, [action.user.id]: action.user };
+
         }
         case LOAD_USER_IMAGES: {
-            return {...state, [action.user['images'].id]: action.userImages}
+            // console.log("hittin images reducer case")
+            return { ...state, [action.user["images"].id]: action.userImages };
         }
         case LOAD_USER_REVIEWS: {
-            const userReviewsState = {"userReviews": []}
-            userReviewsState['userReviews'] = action.userReviews
-            return {...state, userReviewsState}
+
+            const userReviewsState = { userReviews: [] };
+            userReviewsState["userReviews"] = action.userReviews;
+            return { ...state, userReviewsState };
+  
         }
-        
         default:
-            return {...state}
+            return { ...state };
     }
-}
+};
 
 export default userReducer;
