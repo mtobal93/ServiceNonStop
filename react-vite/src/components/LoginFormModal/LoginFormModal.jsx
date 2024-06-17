@@ -96,7 +96,7 @@ function LoginFormModal() {
                 disabled={Object.values(disableCheck).length}
                 type="submit">Log In</button>
             </div>
-            <p>New to The Paw? <>
+            <p>New to Service Non Stop? <>
               <OpenModalMenuItem
                 itemText={<span className="modalLink">Sign Up</span>}
                 modalComponent={<SignupFormModal />}

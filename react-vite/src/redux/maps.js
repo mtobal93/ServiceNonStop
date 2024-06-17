@@ -6,11 +6,11 @@ export const loadGeocode = (geocode) => ({
 })
 
 
-export const getGeocode = (address, city, state) => async (dispatch) => {
+export const getGeocode = () => async (dispatch) => {
 
 
-    const regex = /[^a-zA-Z0-9\s]/g;
-    const gmApiAddress = address?.replaceAll(regex, "");
+    // const regex = /[^a-zA-Z0-9\s]/g;
+    // const gmApiAddress = address?.replaceAll(regex, "");
 
     const res = await fetch(``)
 
