@@ -77,7 +77,7 @@ def seed_reviews():
     julia_rev_1 = Review(
         #! id 10
         user_id=4,
-        company_id=31,
+        company_id=21,
         review='They spoke it, they broke it, and they cleaned it up!',
         stars=5
     )

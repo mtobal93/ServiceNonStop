@@ -336,6 +336,13 @@ def seed_images():
         url='https://www.pressurewashersdirect.com/images/stories/submitted/social_img_1819.jpg',
         uploaded_by_id=2
     )
+
+    marnie = Image(
+        imageable_id=2,
+        imageable_type='user',
+        url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq-hTj5hlzHRRhpw_Icd3QjBcQD0ADo3AbTg&usqp=CAU',
+        uploaded_by_id=2
+    )
     
 
 
@@ -388,6 +395,7 @@ def seed_images():
     db.session.add(quality_power_wash_nyc_comp_1)
     db.session.add(professional_window_cleaning_service_inc_comp_1)
     db.session.add(bosshogg_industries_demolition_and_removal_services_comp_1)
+    db.session.add(marnie)
 
 
 

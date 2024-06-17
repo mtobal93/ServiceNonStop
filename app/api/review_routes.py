@@ -54,7 +54,7 @@ def get_all_reviews():
 
     all_reviews_dict = {'reviews': [format_reviews(review) for review in reviews]} # structure final response dict by calling the above helper function to 
     return all_reviews_dict
-   
+
 
 @review_routes.route('/<int:id>/edit', methods=["PUT"])
 @login_required
