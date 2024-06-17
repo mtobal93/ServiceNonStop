@@ -22,7 +22,7 @@ class Company(db.Model):
     state = db.Column(String(2), nullable=False)
     zip_code = db.Column(String(255), nullable=False)
     website = db.Column(String(255), nullable=True)
-    description = db.Column(String(255), nullable=False)
+    description = db.Column(String(2000), nullable=False)
     price = db.Column(String(4), nullable=True)
     set_hours = db.Column(String(3), nullable=True)
     mon_open = db.Column(String(4), nullable=True)
