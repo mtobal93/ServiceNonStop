@@ -331,7 +331,7 @@ def seed_images():
     )
 
     bosshogg_industries_demolition_and_removal_services_comp_1 = Image(
-        imageable_id=31,
+        imageable_id=30
         imageable_type='company',
         url='https://www.pressurewashersdirect.com/images/stories/submitted/social_img_1819.jpg',
         uploaded_by_id=2
@@ -340,7 +340,7 @@ def seed_images():
     marnie = Image(
         imageable_id=2,
         imageable_type='user',
-        url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq-hTj5hlzHRRhpw_Icd3QjBcQD0ADo3AbTg&usqp=CAU',
+        url='https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
         uploaded_by_id=2
     )
     

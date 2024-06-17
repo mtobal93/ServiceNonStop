@@ -8,6 +8,8 @@ function Footer() {
             <div className="footer">
                 <img className="footer-image" src="../../images/footer.png" />
                 <div className="footer-heading">
+
+                    
                     <div className="dev-heading">
                         Technologies
                         <div className="techs">
@@ -82,6 +84,8 @@ function Footer() {
                     <div className="dev-heading">
                         {/* Docs */}
                         <div className="docs"></div>
+                    
+                    
                     </div>
                     <div className="dev-heading">
                         Developer
@@ -111,6 +115,8 @@ function Footer() {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </>
