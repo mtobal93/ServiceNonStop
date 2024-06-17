@@ -5,7 +5,7 @@ import { stdTimeFormat } from "../../utils";
 import { useSelector } from "react-redux"
 import LoginFormModal from "../LoginFormModal";
 import CreateReviewPage from "../ReviewForms/CreateReviewPage";
-import CompanyMap from "./CompanyMap";
+// import CompanyMap from "./CompanyMap";
 
 import ShareModal from "../ShareModal";
 
@@ -119,7 +119,8 @@ function CompanyDetails({ company, companyId, locationHoursSection, isMobile, is
                 <h3>Location & Hours</h3>
                 <div className="locationHoursContainer">
                     <div className="locationHours">
-                        <div className="businessMap"><CompanyMap company={company} /></div>
+                        {/* <div className="businessMap"><CompanyMap company={company} /></div> */}
+                        <div className="businessMap"></div>
                         <div className="businessDetailsLocation">
                             <div className="businessAddress">
                                 <div>{company.address}</div>
