@@ -372,8 +372,8 @@ def seed_companies():
 
     central_florida_electrician = Company(
         #! id 14
-        owner_id=1,
-        category_id=10,
+        owner_id=10,
+        category_id=1,
         name="Tidal Electrical Services, Inc.",
         phone="9197823278",
         address="6613 Fleetwood Dr Suite 100",
