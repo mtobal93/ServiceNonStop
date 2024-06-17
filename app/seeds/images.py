@@ -331,7 +331,7 @@ def seed_images():
     )
 
     bosshogg_industries_demolition_and_removal_services_comp_1 = Image(
-        imageable_id=30
+        imageable_id=30,
         imageable_type='company',
         url='https://www.pressurewashersdirect.com/images/stories/submitted/social_img_1819.jpg',
         uploaded_by_id=2
