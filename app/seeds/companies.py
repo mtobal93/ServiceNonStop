@@ -320,7 +320,7 @@ def seed_companies():
         owner_id=1,
         category_id=2,
         name="KB Electric Inc",
-        phone="97374462011",
+        phone="9737446201",
         address="78-80 Broughton Ave",
         city="Bloomfield",
         state="NJ",
