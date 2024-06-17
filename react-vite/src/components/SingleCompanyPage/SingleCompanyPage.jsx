@@ -48,16 +48,16 @@ function SingleCompanyPage() {
         let toolsNotFilled = []
 
         for (let i = 0; i < parseInt(numStars); i++) {
-            toolsFilled.push(<span className="paws-filled"><i className="fa-solid fa-paw"></i> </span>)
+            toolsFilled.push(<span className="paws-filled"><i className="fa-solid fa-hammer"></i> </span>)
         }
 
         let remaining_paws = 5 - numStars
         let remainder = numStars - parseInt(numStars)
 
         if (remainder > 0.3 && remainder < 0.79) {
-            toolsNotFilled.push(<span className="paws-half-span"><img className="paws-half" src='../../images/half-paw.png' /></span>)
+            toolsNotFilled.push(<span className="paws-half-span"><img className="paws-half" src='../../images/half-hammer.png'/></span>)
         } else if (remainder > 0.79) {
-            toolsFilled.push(<span className="paws-filled"><i className="fa-solid fa-paw"></i> </span>)
+            toolsFilled.push(<span className="paws-filled"><i className="fa-solid fa-hammer"></i> </span>)
         }
 
         if (toolsNotFilled.length === 0) {

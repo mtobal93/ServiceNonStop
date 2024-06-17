@@ -25,7 +25,7 @@
 
 
 /* HTML: <div class="loader"></div> */
-.loader {
+/* .loader {
   width: calc(6*30px);
   height: 50px;
   display: flex;
@@ -35,8 +35,8 @@
   animation: l12 2s infinite steps(7);
   margin: auto;
   padding: 20px 0;
-}
-
+} */
+/* 
 .loader:before {
   content: "";
   width: 30px;
@@ -47,13 +47,13 @@
     var(--c) right/20% 20%,
     var(--c) top 0 right 15%/20% 20%,
     var(--c) bottom 0 right 15%/20% 20%;
-}
+} */
 
-@keyframes l12 {
+/* @keyframes l12 {
   100% {
     clip-path: inset(0 -30px 0 0)
   }
-}
+} */
 
 .businessCards:hover {
   box-shadow: 2px 2px 5px .05px;
@@ -85,7 +85,7 @@
 
 .businessDeets h2 {
   margin-bottom: 0px;
-  color: #5f5ba8 !important;
+  color:#293D52 !important;
 }
 
 .pawRatingInputFilter>h4 {
@@ -94,7 +94,7 @@
 
 .pawRatingInputFilter {
   border-bottom: 1px solid #c3cddf;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
 }
 
 .pawRatingInputFilter:hover {
@@ -102,7 +102,7 @@
 }
 
 .price-filled {
-  color: #5f5ba8;
+  color: #FF6969;
 }
 
 .price-unfilled {

@@ -97,7 +97,7 @@ function UpdateReviewPage({ reviewId, companyId }) {
                         id="review-input"
                         value={review}
                         onChange={(e) => setReview(e.target.value)}
-                        placeholder="Write your review here. It must be least 100 characters, but no more than 2,000 characters."
+                        placeholder="Write your review here. It must be least 20 characters, but no more than 2,000 characters."
                         name="review"
                     />
                 </div>

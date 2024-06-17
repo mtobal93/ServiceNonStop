@@ -23,7 +23,7 @@ function CategoriesComponent() {
 
     return (
         <>
-            <h1 className="categoriesHeader">Let One of Them Help You!!!</h1>
+            <h1 className="categoriesHeader">Let One of Us Help You</h1>
 
             <div className="categoryContainer">
                 

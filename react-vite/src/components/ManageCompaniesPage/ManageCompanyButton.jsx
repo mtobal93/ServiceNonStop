@@ -47,7 +47,7 @@ function ManageCompanyButton({ company }) {
             </div>
             <div className="profiledropdownoptions">
               <OpenModalMenuItem
-                itemText={<><i className="fa-solid fa-trash-can" />&nbsp; Delete Company</>}
+                itemText={<><i className="fa-solid fa-trash-can" /> Delete Company</>}
                 companyId={company.id}
                 modalComponent={<DeleteCompanyModal companyId={company.id} />}
               />

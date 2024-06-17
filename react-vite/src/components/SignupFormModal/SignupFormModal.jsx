@@ -127,10 +127,10 @@ function SignupFormModal() {
 
     return (
         <>
-            <div className="logSignMod">
+            <div className="loginSignupModals">
                 {errors.server && <p>{errors.server}</p>}
 
-                <form className="landSModal" onSubmit={handleSubmit}>
+                <form className="signUpModal" onSubmit={handleSubmit}>
                     <h1>Sign Up</h1>
                     <input
                         type="text"

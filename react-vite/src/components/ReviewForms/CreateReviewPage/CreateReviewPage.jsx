@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import { createNewReviewThunk, createImageThunk, getCompanyReviewsThunk } from "../../../redux/reviews";
-import { loadACompany } from "../../../redux/companies";
+import { loadACompanyThunk } from "../../../redux/companies";
 import OpenModalButton from "../../OpenModalButton";
 import LoginFormModal from '../../LoginFormModal';
 import "../ReviewForm.css"
@@ -36,26 +36,20 @@ function CreateReviewPage({ companyId: propCompanyId, modalLoad }) {
             stars
         }
 
-        // console.log("reviewData:", reviewData)
 
         let newlyCreatedReview = await dispatch(createNewReviewThunk(reviewData, companyId))
-        // console.log("newlyCreatedReview: ", newlyCreatedReview)
 
         if (newlyCreatedReview.status == 403) {
-            // console.log("")
             setErrors({ 'statusCode': 403, 'message': 'forbidden' });
         }
 
         if (newlyCreatedReview.errors) {
-            // console.log("")
             setErrors(newlyCreatedReview.errors);
         }
 
         if (newlyCreatedReview && newlyCreatedReview.id) {
-            // console.log("successful review submission");
 
             if (image != null) {
-
 
                 const formData = new FormData();
                 formData.append("image", image);
@@ -69,7 +63,7 @@ function CreateReviewPage({ companyId: propCompanyId, modalLoad }) {
                 setImageLoading(true);
 
                 dispatch(createImageThunk(formData)).then(() => {
-                    dispatch(loadACompany(companyId))
+                    dispatch(loadACompanyThunk(companyId))
                         .then(dispatch(getCompanyReviewsThunk(companyId)))
 
                         .then(() => closeModal())
@@ -80,7 +74,7 @@ function CreateReviewPage({ companyId: propCompanyId, modalLoad }) {
             }
             else {
 
-                dispatch(loadACompany(companyId))
+                dispatch(loadACompanyThunk(companyId))
                     .then(dispatch(getCompanyReviewsThunk(companyId)))
                     .then(() => closeModal())
             }
@@ -106,7 +100,7 @@ function CreateReviewPage({ companyId: propCompanyId, modalLoad }) {
     return (
         <div className={modalLoad ? "loginSignupModals" : "page"}>
             {errors.message != 'forbidden' && <form onSubmit={handleSubmit} encType="multipart/form-data">
-                <h1>Inform us about it!</h1>
+                <h1>Inform us about their Service!</h1>
 
                 <div className="reviewForm">
                     <div className="review-fields">

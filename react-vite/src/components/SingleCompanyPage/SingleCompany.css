@@ -170,7 +170,7 @@
 }
 
 .edit_delete button {
-    background-color: #f78a63;
+    background-color: #FF6969;
     font-family: "Poppins", sans-serif;
     border: none;
     border-radius: 5px;
@@ -183,12 +183,12 @@
 
 .businessDetails_writeAReview button {
     color: white;
-    border: #5f5ba8 1px solid;
-    background-color: #5f5ba8;
+    border: #ff69698b 1px solid;
+    background-color: #FF6969;
 }
 
 .businessDetails_writeAReview button:hover {
-    background-color: rgba(95, 91, 168, 0.9);
+    background-color: #ff6969a3;
 }
 
 .businessDetails hr {
@@ -299,7 +299,7 @@
 }
 
 .userName {
-    color: #5f5ba8;
+    color: #293D52;
     grid-area: name;
     font-weight: 600;
 }

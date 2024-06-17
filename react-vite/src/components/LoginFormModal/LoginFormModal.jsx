@@ -62,63 +62,50 @@ function LoginFormModal() {
     };
 
     return (
-        <>
-            <div className="logSignMod">
-                <form className="landSModal" onSubmit={handleSubmit}>
-                    <h1>Log In</h1>
-                    <div>
-                        {errors.password && (<p className="errors" style={{ paddingTop: "5px" }}>{errors.password}</p>)}
-                    </div>
-                    <div></div>
-                    <div>
-                        <input
-                            type="text"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                            placeholder="Email"
-                        />
-                    </div>
-                    {disableCheck.email && (<span className="errors">&nbsp;{disableCheck.email}</span>)}
-
-                    <div></div>
-                    <div>
-                        <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                            placeholder="Password"
-                        />
-                    </div>
-
-                    <div style={{ marginTop: "10px" }}>
-                        <button
-                            disabled={Object.values(disableCheck).length}
-                            type="submit"
-                        >
-                            Log In
-                        </button>
-                    </div>
-
-                    <p>
-                        New to The Service Non Stop?{" "}
-                        <>
-                            <OpenModalMenuItem
-                                itemText={
-                                    <span className="modalLink">Sign Up</span>
-                                }
-                                modalComponent={<SignupFormModal />}
-                            />
-                        </>
-                    </p>
-                    <div>
-                        <Link onClick={demoUser}>Log in as Demo User</Link>
-                    </div>
-                </form>
+        <div className="loginSignupModals">
+          <form className="signUpModal" onSubmit={handleSubmit}>
+            <h1>Log In</h1>
+            <div>
+              {errors.password && <p className="errors" style={{ paddingTop: "5px" }}>{errors.password}</p>}
             </div>
-        </>
-    );
+            <div>
+            </div>
+            <div>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Email"
+              />
+            </div>
+            {disableCheck.email && <span className="errors">&nbsp;{disableCheck.email}</span>}
+            <div>
+            </div>
+            <div>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Password"
+              />
+            </div>
+            <div style={{ marginTop: "10px" }}>
+              <button
+                disabled={Object.values(disableCheck).length}
+                type="submit">Log In</button>
+            </div>
+            <p>New to The Paw? <>
+              <OpenModalMenuItem
+                itemText={<span className="modalLink">Sign Up</span>}
+                modalComponent={<SignupFormModal />}
+              />
+            </></p>
+            <div><Link onClick={demoUser}>Log in as Demo User</Link></div>
+          </form>
+        </div>
+      );
 }
 
 export default LoginFormModal;

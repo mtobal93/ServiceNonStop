@@ -19,6 +19,10 @@ function Navigation() {
                 />
             </NavLink>
 
+            <div className="workVan">
+                <img src="../images/workVan.gif" height={75} alt="workVan" />
+            </div>
+
             <SearchBar />
 
             <div className="rightNav">

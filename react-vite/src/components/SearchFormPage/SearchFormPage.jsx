@@ -35,7 +35,7 @@ function SearchFormPage() {
     const [isTablet, setIsTablet] = useState(
         window.innerWidth <= 768 && window.innerWidth >= 481
     );
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const handleResize = () => {
         setIsMobile(window.innerWidth <= 480);
@@ -143,7 +143,7 @@ function SearchFormPage() {
             dispatch(
                 getCompanies(search_query, searchLoc, filter, page, perPage)
             )
-                .then(() => setTimeout(() => setLoading(false), 1200))
+                .then(() => setTimeout(() => setLoading(false), 2))
                 .catch((error) => {
                     console.error(error);
                 });
@@ -168,7 +168,7 @@ function SearchFormPage() {
             .then(() =>
                 setTimeout(() => {
                     setLoading(false);
-                }, 1200)
+                }, 2)
             )
             .catch((error) => {
                 return error;
@@ -188,7 +188,7 @@ function SearchFormPage() {
             ).then(() =>
                 setTimeout(() => {
                     setLoading(false);
-                }, 1200)
+                }, 2)
             );
             window.scrollTo(0, 0); // Scroll to top
         }
@@ -205,7 +205,7 @@ function SearchFormPage() {
             ).then(() =>
                 setTimeout(() => {
                     setLoading(false);
-                }, 1200)
+                }, 2)
             );
             window.scrollTo(0, 0); // Scroll to top
         }

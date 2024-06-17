@@ -1,12 +1,16 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getCompanies } from '../../redux/search';
+import {getUserThunk} from "../../redux/users"
 
 function Header() {
 
     const navigate = useNavigate();
     const dispatch = useDispatch()
+
+    const user = useSelector(state => state.session.user);
+
 
     const handleClick = e => {
         e.preventDefault();
@@ -27,17 +31,20 @@ function Header() {
     return (
         <>
             <div className="photoHeader">
-                <img src="https://www.airco.com/wp-content/uploads/2021/09/iStock-1136830102-e1635881952200.jpg" />
+                <img src="https://columbianw.com/wp-content/uploads/2019/08/ductwork.jpg" />
                 <div className="photoHeaderText">
-                    <h1>We want you comfortable</h1>
-                    <div>
-                        <button onClick={handleClick}><i className="fa-solid fa-magnifying-glass" />&nbsp;&nbsp;&nbsp;Heating and Air</button>
-                    </div>
+                    { !user || user.message === "user: null" ? (
+                        <>
+                        <h1>Welcome to Service Non Stop</h1>
+
+                        </>
+                    ) : (
+                        <h1>Hi {user.first_name},</h1>
+
+                    )}
+ 
                 </div>
-                <div className="photoHeaderCredit">
-                    <div><Link to="/companies/4">Edison Heating & Cooling</Link></div>
-                    <div style={{ fontWeight: "300" }}>Photo by June S.</div>
-                </div>
+
             </div >
         </>
     )
