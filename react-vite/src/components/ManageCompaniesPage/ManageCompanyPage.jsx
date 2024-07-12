@@ -143,7 +143,7 @@ function ManageCompanyPage() {
           ))
         ) : (
           <div className='no-biz'>
-            <div>It looks like you don&apos;t have any companies listed on The Paw.</div>
+            <div>It looks like you don&apos;t have any companies listed on Service Non Stop.</div>
             &nbsp;
             <Link to={'/companies/new'}>Add your company to Service Non Stop!</Link>
           </div>

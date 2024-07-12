@@ -81,10 +81,10 @@ function SingleCompanyReviews({ companyId, sessionUser }) {
                             )}
                         </div>
                         <div className="userName" onClick={() => navigate(`/users/${review.user.id}`)}>{review.user.first_name} {review.user.last_name && lastInitial(review.user.last_name)}</div>
-                        <div className="loc">{review.user.city}, {review.user.state}</div>
+                        {/* <div className="loc">{review.user.city}, {review.user.state}</div>
                         <div className="stats">
                             <span style={{ fontSize: "small" }}><i className="fa-solid fa-hammer" /></span> &nbsp;{review.user.user_num_reviews} &nbsp;&nbsp;&nbsp;
-                            <span style={{ fontSize: "small" }}><i className="fa-regular fa-image" /></span> &nbsp;{review.user.user_num_images}</div>
+                            <span style={{ fontSize: "small" }}><i className="fa-regular fa-image" /></span> &nbsp;{review.user.user_num_images}</div> */}
                     </div>
                     <p>{review.stars && (reviewStars(review.stars))} &nbsp;&nbsp;{review.created_at && (dateFormat(review.created_at))}</p>
                     <p className='review-text'>{review.review}</p>

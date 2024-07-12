@@ -189,7 +189,7 @@ const SearchBar = () => {
 
                 <button id="search" type="submit">
                     <i
-                        className="fa-solid fa-magnifying-glass"
+                        className="fa-solid fa-magnifying-glass fa-beat-fade"
                         style={{ color: "#FF6969", fontSize: "large" }}
                     />
                 </button>

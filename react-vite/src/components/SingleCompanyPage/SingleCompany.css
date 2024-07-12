@@ -3,7 +3,6 @@
     height: 425px;
 }
 
-
 /* .businessPhotoHeader img {
     object-fit: cover;
     object-position: center;
@@ -19,7 +18,7 @@
 }
 
 .businessPhotoHeader::before {
-    content: '';
+    content: "";
     z-index: 1;
     width: 100%;
     height: 425px;
@@ -27,7 +26,11 @@
     object-position: center;
     display: block;
     position: absolute;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0) 50%
+    );
 }
 
 .businessHeader {
@@ -37,7 +40,7 @@
     bottom: 58%;
     z-index: 1;
     padding: 5px;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 500;
     width: 80vw;
     display: grid;
@@ -49,7 +52,7 @@
     font-weight: bold;
     margin-bottom: -8px;
     font-size: 40px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .currHours {
@@ -78,6 +81,11 @@
 .seeAllPhotosSection {
     display: grid;
     justify-content: end;
+    margin-right: 7rem;
+}
+
+.compName {
+    margin-left: 7rem;
 }
 
 .seeAllPhotos {
@@ -109,11 +117,10 @@
     margin: 0px 3px;
 }
 
-
 .businessPhotoHeader .pawBlock {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    background-color: #FFFFFF !important;
+    background-color: #ffffff !important;
     width: fit-content !important;
     padding: 3px 6px 3px 6px !important;
     border-radius: 5px !important;
@@ -147,16 +154,20 @@
     margin: auto;
     display: flex;
     column-gap: 35px;
+    margin-bottom: 14rem;
+    justify-content: center;
 }
 
 .businessDetails {
-    width: 750px;
+    width: 800px;
+
     /* padding-right: 35px; */
 }
 
 .businessDetailsButtons {
     display: flex;
     gap: 5px;
+    margin: 5rem 0 2rem 0;
 }
 
 .businessDetails button {
@@ -170,13 +181,13 @@
 }
 
 .edit_delete button {
-    background-color: #FF6969;
+    background-color: #ff6969;
     font-family: "Poppins", sans-serif;
     border: none;
     border-radius: 5px;
     padding: 10px 15px 10px 15px;
     font-size: 16px;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 400;
     margin-top: 14px;
 }
@@ -184,7 +195,8 @@
 .businessDetails_writeAReview button {
     color: white;
     border: #ff69698b 1px solid;
-    background-color: #FF6969;
+    background-color: #ff6969;
+    margin-left: 31.9rem;
 }
 
 .businessDetails_writeAReview button:hover {
@@ -214,7 +226,7 @@
 .businessDetailsButtons div {
     display: flex;
     column-gap: 10px;
-    justify-content: center;
+    align-items: baseline;
 }
 
 .businessDetailsLocation {
@@ -231,7 +243,7 @@
 }
 
 .businessContact {
-    position: sticky;
+    /* position: sticky; */
     top: 20px;
     width: 365px;
     height: fit-content;
@@ -259,7 +271,7 @@
 }
 
 .businessContactIcon a {
-    color: #1f2f44
+    color: #1f2f44;
 }
 
 .businessCardDetail {
@@ -277,6 +289,7 @@
         "avatar stats";
     align-items: center;
     grid-auto-rows: 22px;
+    margin-top: 3rem;
 }
 
 .avatar {
@@ -299,7 +312,7 @@
 }
 
 .userName {
-    color: #293D52;
+    color: #293d52;
     grid-area: name;
     font-weight: 600;
 }
@@ -341,7 +354,6 @@
     cursor: pointer;
 }
 
-
 .review-text {
     max-inline-size: 690px;
     word-wrap: break-word;
@@ -350,7 +362,6 @@
     /* Break words when necessary */
     white-space: pre-wrap;
     /* Preserve white space */
-
 }
 
 .App {
@@ -366,6 +377,50 @@
 .bizContactMobile {
     display: none;
 }
+
+.bizContactDesk {
+    display: none;
+    display: flex;
+    justify-content: center;
+}
+
+.bizContactDesk div {
+    padding-top: 10px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.businessWebsiteContainer,
+    .businessPhoneContainer,
+    .businessAddressContainer {
+        flex-direction: column;
+        padding-bottom: 0;
+        text-decoration: none;
+    }
+
+    .businessWebsiteContainer a,
+    .businessPhoneContainer a,
+    .businessAddressContainer a {
+        color: #1f2f44;
+    }
+
+    .businessContactIcon {
+        padding-left: 0;
+    }
+
+    .businessContactIcon i {
+        font-size: x-large;
+    }
+
+    .compDetailsIcons{
+        margin-bottom: 4rem;
+    }
+
+    .compNumContainer {
+        margin-top: 1rem;
+        font-size: x-large;
+    }
 
 @media screen and (max-width: 480px) {
     .businessPhotoHeader {
@@ -406,7 +461,7 @@
     }
 
     .businessDetails button {
-        padding: 10px
+        padding: 10px;
     }
 
     .businessDetailsButtons {
@@ -429,7 +484,6 @@
         display: flex;
         justify-content: center;
     }
-
 
     .businessWebsiteContainer,
     .businessPhoneContainer,
@@ -465,10 +519,11 @@
     .hours {
         column-gap: 20px;
     }
+
+    
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-
     .businessContainer {
         padding: 5vw;
         column-gap: 0;
@@ -476,7 +531,7 @@
     }
 
     .businessDetails button {
-        padding: 10px
+        padding: 10px;
     }
 
     .businessDetailsButtons {
@@ -534,11 +589,13 @@
     .businessContact {
         display: none;
     }
+
+    .businessDetails_writeAReview button {
+        margin-left: 23.95rem;
+    }
 }
 
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-
     .businessContainer {
         width: 90vw;
         display: grid;
@@ -547,11 +604,10 @@
 
     .businessDetails {
         width: auto;
-
     }
 
     .businessDetails button {
-        padding: 10px
+        padding: 10px;
     }
 
     .businessWebsiteContainer,
@@ -587,7 +643,16 @@
     .businessDetailsLocation {
         gap: 20px;
     }
+    .businessDetails_writeAReview button {
+        margin-left: 19.5rem;
+    }
+    .businessDetails_writeAReview button {
+        margin-left: 10.7rem;
+    }
 
+    .businessDetails_writeAReview button {
+        margin-left: 19.53rem;
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -601,5 +666,7 @@
         left: 50%;
         transform: translateX(-50%);
     }
-
+    .businessDetails_writeAReview button {
+        margin-left: 31.92rem;
+    }
 }

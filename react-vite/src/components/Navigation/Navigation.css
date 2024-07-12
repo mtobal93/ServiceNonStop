@@ -24,7 +24,7 @@
   height: 35%;
   justify-self: end;
   border-radius: 50px;
-  
+  z-index: 1;
 }
 
 .formNav {
@@ -45,7 +45,8 @@
 	animation-name: myMove;
 	animation-iteration-count: infinite;
 	animation-direction: normal;
-	animation-duration: 10s;
+	animation-duration: 15s;
+
 }
 
 @keyframes myMove {
@@ -57,7 +58,7 @@
 		opacity: 1;
 	}
 	100% {
-		transform: translateX(40vw);
+		transform: translateX(80vw);
 		visibility: hidden;
 		opacity: 0;
 		transition: visibility 0s 2s, opacity 2s linear;
@@ -116,6 +117,7 @@
   display: flex;
   justify-content: end;
   margin-right: 25px;
+  z-index: 2;
 }
 
 .profileAvatar {
@@ -147,18 +149,20 @@
   background-color: #FFFBF6;
   right: 0;
   left: inherit;
-  margin-top: 50px;
+  margin-top: 70px;
   border-radius: 5px;
   z-index: 2;
 }
 
 .profiledropdownoptions {
-  padding: 10px;
+  padding: 15px;
   display: flex;
   align-items: center;
   cursor: pointer;
   font-weight: 500 !important;
   color: #1f2f44 !important;
+  margin-top: 5px;
+
 }
 
 .profiledropdownoptions a {
@@ -172,8 +176,8 @@
 }
 
 .profiledropdownoptions:hover {
-  background-color: #c3cddf;
-  padding: 10px;
+  background-color: #d0e1fa;
+  padding: 15px;
   border-radius: 5px;
 }
 
@@ -228,6 +232,7 @@
     grid-area: search;
     width: 90vw;
     margin: auto;
+    height: 25px;
   }
 
   .rightNav {
@@ -237,6 +242,10 @@
   .rightNavButtons {
     gap: 5px;
   }
+
+  /* #searchQuery {
+    margin-bottom: .5rem;
+  } */
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -256,6 +265,7 @@
     grid-area: search;
     width: 90vw;
     margin: auto;
+    height: 25px;
   }
 
   .rightNav {

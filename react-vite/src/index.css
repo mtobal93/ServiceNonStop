@@ -98,7 +98,7 @@ select {
 }
 
 a {
-    color: white;
+    /* color: #3441f9; */
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;

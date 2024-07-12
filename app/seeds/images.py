@@ -61,14 +61,14 @@ def seed_images():
     forced_air_mechanical_comp_1 = Image(
         imageable_id=3,
         imageable_type='company',
-        url='https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/209666898_1119339628552910_5993473342379104980_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=iJcuZKJTyqoQ7kNvgHDTflz&_nc_ht=scontent-atl3-2.xx&oh=00_AYBRxfA5Xc41cJKXPg_sHnTt0DMfAjZpt81FTOw90vlnFg&oe=668D8BA4',
+        url='https://lh3.googleusercontent.com/p/AF1QipMm7mOStkXuL2xzY8axElRue66Exdh2PCRoe8Hu=s680-w680-h510',
         uploaded_by_id=3
     )
 
     forced_air_mechanical_comp_2 = Image(
         imageable_id=3,
         imageable_type='company',
-        url='https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/274718645_1273014426518762_643297397442131946_n.png?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Avv5HA0MmfcQ7kNvgHoJ4T4&_nc_ht=scontent-atl3-1.xx&oh=00_AYAmcKX61arGgYveUDveA3Iur6_wHCjXIFx4tBOJNB2NZQ&oe=666BD178',
+        url='https://lh3.googleusercontent.com/p/AF1QipPqqF3FaAS3GOxJ6ZfD4lv8IbhZFGpOIOpJLKwc=s680-w680-h510',
         uploaded_by_id=7
     )
 
@@ -228,7 +228,7 @@ def seed_images():
     sams_paving_comp_1 = Image(
         imageable_id=19,
         imageable_type='company',
-        url='https://keystonecustomdecks.com/wp-content/uploads/2018/05/masonry-features.jpg',
+        url='https://le-cdn.hibuwebsites.com/c5c37e2069e142d3bf8e6acc0bea423b/dms3rep/multi/opt/IMG_8040-1920w.jpg',
         uploaded_by_id=6
     )
 
@@ -340,7 +340,7 @@ def seed_images():
     marnie = Image(
         imageable_id=2,
         imageable_type='user',
-        url='https://www.vhv.rs/dpng/d/426-4264903_user-avatar-png-picture-avatar-profile-dummy-transparent.png',
+        url='https://mrwallpaper.com/images/high/cute-girl-vector-art-profile-picture-jhbu3wt713zj2bti.jpg',
         uploaded_by_id=2
     )
     

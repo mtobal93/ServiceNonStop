@@ -18,6 +18,7 @@ function Footer() {
                                     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="footer-a"
                                 >
                                     <i className="fa-brands fa-js fa-lg" />
                                 </a>
@@ -26,6 +27,7 @@ function Footer() {
                                     href="https://react.dev/"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="footer-a"
                                 >
                                     <i className="fa-brands fa-react fa-lg" />
                                 </a>
@@ -34,6 +36,7 @@ function Footer() {
                                     href="https://redux.js.org/"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="footer-a"
                                 >
                                     <SiRedux />
                                 </a>
@@ -42,6 +45,7 @@ function Footer() {
                                     href="https://www.w3.org/Style/CSS/Overview.en.html"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="footer-a"
                                 >
                                     <i className="fa-brands fa-css3-alt fa-lg" />
                                 </a>
@@ -50,6 +54,7 @@ function Footer() {
                                     href="https://docs.python.org/3/"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="footer-a"
                                 >
                                     <i className="fa-brands fa-python fa-lg" />
                                 </a>
@@ -58,15 +63,16 @@ function Footer() {
                                     href="https://flask.palletsprojects.com/en/3.0.x/"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="footer-a"
                                 >
                                     <SiFlask />
                                 </a>
 
                                 <a
-                                    className="postgres"
                                     href="https://www.postgresql.org/docs/"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="footer-a"
                                 >
                                     <SiPostgresql />
                                 </a>
@@ -75,6 +81,7 @@ function Footer() {
                                     href="https://developer.mozilla.org/en-US/docs/Web/HTML"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="footer-a"
                                 >
                                     <i className="fa-brands fa-html5 fa-lg" />
                                 </a>
@@ -96,6 +103,7 @@ function Footer() {
                                         href="https://www.linkedin.com/in/manuel-tobal-8a8127175/"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        className="footer-a"
                                     >
                                         <span className="icons">
                                             <i className="fa-brands fa-linkedin fa-lg" />
@@ -105,6 +113,7 @@ function Footer() {
                                         href="https://github.com/mtobal93"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        className="footer-a"
                                     >
                                         <span className="icons">
                                             <i className="fa-brands fa-github fa-lg" />

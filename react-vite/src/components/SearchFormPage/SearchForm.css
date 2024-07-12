@@ -1,28 +1,27 @@
 .businessCards {
-  display: flex;
-  width: 700px;
-  border: 1px solid #1f2f44;
-  align-content: center;
-  padding: 5px;
-  margin-left: 300px;
-  margin-bottom: 20px;
-  position: relative;
-  border-radius: 5px;
+    display: flex;
+    width: auto;
+    /* border: 1px solid #1f2f44; */
+    align-content: center;
+    padding: 5px;
+    margin-left: 300px;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 5px;
 }
 
 .pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 700px;
-  margin-left: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    margin-left: 300px;
+    margin-top: 30px;
 }
-
 
 .pagination button:disabled {
-  cursor: default;
+    cursor: default;
 }
-
 
 /* HTML: <div class="loader"></div> */
 /* .loader {
@@ -56,380 +55,406 @@
 } */
 
 .businessCards:hover {
-  box-shadow: 2px 2px 5px .05px;
+    /* box-shadow: 2px 2px 5px 0.05px; */
+    background-color: #c5dafb5e;
 }
 
 .businessesImageWrapper {
-  width: 300px;
-  height: 225px;
-  padding: 20px 25px 20px 20px;
+    width: 300px;
+    height: 225px;
+    padding: 20px 25px 20px 20px;
 }
 
 .businessesImage {
-  object-fit: cover;
-  object-position: center;
-  border-radius: 3px;
-  width: 300px;
-  height: 225px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 3px;
+    width: 300px;
+    height: 225px;
 }
 
 .businessDeets {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-  text-wrap: wrap;
-  padding: 10px 15px 0 0;
-  color: #1f2f44 !important;
-  font-weight: 300 !important;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    text-wrap: wrap;
+    padding: 10px 15px 0 0;
+    color: #1f2f44 !important;
+    font-weight: 300 !important;
 }
 
 .businessDeets h2 {
-  margin-bottom: 0px;
-  color:#293D52 !important;
+    margin-bottom: 0px;
+    color: #293d52 !important;
 }
 
-.pawRatingInputFilter>h4 {
-  margin: 2px 0;
+.pawRatingInputFilter > h4 {
+    margin: 2px 0;
 }
 
 .pawRatingInputFilter {
-  border-bottom: 1px solid #c3cddf;
-  padding-bottom: 30px;
+    border-bottom: 1px solid #c3cddf;
+    padding-bottom: 5px;
 }
 
 .pawRatingInputFilter:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .price-filled {
-  color: #FF6969;
+    color: #ff6969;
 }
 
 .price-unfilled {
-  color: #c3cddf;
+    color: #c3cddf;
 }
 
-.priceInputFilter>h4 {
-  margin: 2px 0 10px;
+.priceInputFilter > h4 {
+    margin: 2px 0 10px;
 }
 
 .priceInputFilter {
-  padding: 15px 0;
-  border-bottom: 1px solid #c3cddf;
-  margin-bottom: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #c3cddf;
+    margin-bottom: 10px;
 }
 
 .filterComponent {
-  display: flex;
-  width: 200px;
-  flex-direction: column;
-  position: absolute;
-  margin-top: -19px;
-  padding-bottom: 30px;
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    position: absolute;
+    /* margin-top: -19px; */
+    padding-bottom: 30px;
 }
 
 .searchPage {
-  /* padding-left: 25px; */
-  padding-top: 20px;
-  max-width: 1125px;
-  margin: auto;
+    /* padding-left: 25px; */
+    padding-top: 20px;
+    max-width: 1125px;
+    margin: auto;
+    margin-top: 5rem;
 }
 
 .searchPage h1 {
-  width: fit-content;
+    width: fit-content;
 }
 
 .categoryFilter {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #c3cddf;
-  margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #c3cddf;
+    margin-bottom: 10px;
 }
 
 .noBiz {
-  display: flex;
-  width: 500px;
-  align-content: center;
-  margin-left: 400px;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  font-size: large;
+    display: flex;
+    width: 500px;
+    align-content: center;
+    margin-left: 400px;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
 }
 
+
+
 .filter-buttons {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .filter-buttons button {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .apply-filter-button {
-  border-radius: 3px;
-  padding: 12px 16px 12px 16px;
-  font-size: 16px;
-  font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 16px 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .clear-filter-button {
-  border-radius: 3px;
-  padding: 12px 16px 12px 16px;
-  font-size: 16px;
-  font-weight: 600;
-  border: #c3cddf 1px solid;
-  background-color: transparent;
-  color: #1f2f44;
+    border-radius: 3px;
+    padding: 12px 16px 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border: #c3cddf 1px solid;
+    background-color: transparent;
+    color: #1f2f44;
 }
 
-
 .starsSearch {
-  width: 100px;
-  height: 26px;
+    height: 26px;
 }
 
 .rating-paw-text {
-  margin-top: 1px;
+    margin-top: 1px;
 }
 
 .rating-input {
-  margin: 10px 0 0;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
+    margin: 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
-
 .priceInputFilter input:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 select {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-.categoryFilter>h4 {
-  margin: 10px 0 10px;
+.categoryFilter > h4 {
+    margin: 10px 0 10px;
 }
 
 .recent-review-text {
-  inline-size: 340px;
-  word-wrap: break-word;
-  /* Break long words when necessary */
-  overflow-wrap: break-word;
-  /* Break words when necessary */
-  white-space: pre-wrap;
-  /* Preserve white space */
-
+    inline-size: 340px;
+    word-wrap: break-word;
+    /* Break long words when necessary */
+    overflow-wrap: break-word;
+    /* Break words when necessary */
+    white-space: pre-wrap;
+    /* Preserve white space */
 }
 
 .review-text-wrapper {
-  width: 100%;
+    width: 100%;
+}
 
+.priceSubcat {
+    display: flex;
+}
+
+.line-breaks {
+    margin-left: 20rem;
+}
+
+.result-word {
+    font-family: "Baskervville SC", serif;
+    font-weight: 900;
+    font-style: normal;
+    align-self: baseline;
+    margin-top: 0;
+}
+
+.result {
+  margin-left: 19rem;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 480px) {
-  .businessCards {
-    margin: auto;
-    width: 90vw;
-    flex-direction: column;
-  }
+    .businessCards {
+        margin: auto;
+        width: 90vw;
+        flex-direction: column;
+    }
 
-  .pagination {
-    margin: auto;
-    width: auto;
-  }
+    .pagination {
+        margin: auto;
+        width: auto;
+    }
 
-  .businessesImageWrapper {
-    width: auto;
-    height: 200px;
-    padding: 20px;
-  }
+    .businessesImageWrapper {
+        width: auto;
+        height: 200px;
+        padding: 20px;
+    }
 
-  .businessesImage {
-    width: 100%;
-    height: 200px;
-  }
+    .businessesImage {
+        width: 100%;
+        height: 200px;
+    }
 
-  .businessDeets {
-    width: 90%;
-    margin-left: 5vw;
-    padding-top: 0;
-    padding-bottom: 15px;
-  }
+    .businessDeets {
+        width: 90%;
+        margin-left: 5vw;
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
 
-  .businessDeets h2,
-  .priceSubcat,
-  .searchStars,
-  .todayHours {
-    width: fit-content;
-    margin-top: 0px;
-  }
+    .businessDeets h2,
+    .priceSubcat,
+    .searchStars,
+    .todayHours {
+        width: fit-content;
+        margin-top: 0px;
+    }
 
+    .recent-review-text {
+        inline-size: auto;
+    }
 
+    .searchPage h1 {
+        margin-left: 5vw;
+        width: 90vw;
+    }
 
-  .recent-review-text {
-    inline-size: auto;
-  }
+    .filterButtonWrapper {
+        margin-left: 4vw;
+        padding-bottom: 20px;
+    }
 
-  .searchPage h1 {
-    margin-left: 5vw;
-    width: 90vw;
-  }
+    .filterButton {
+        border-radius: 3px;
+        padding: 12px 16px 12px 16px;
+        font-size: 16px;
+        font-weight: 600;
+        border: #c3cddf 1px solid;
+        background-color: transparent;
+        color: #1f2f44;
+    }
 
-  .filterButtonWrapper {
-    margin-left: 4vw;
-    padding-bottom: 20px;
-  }
+    .outerFilterWrapper .filterComponent {
+        margin-top: 5px;
+        background-color: #fffbf6;
+        padding: 15px;
+        width: 80vw;
+        border-radius: 5px;
+        z-index: 1;
+    }
 
-  .filterButton {
-    border-radius: 3px;
-    padding: 12px 16px 12px 16px;
-    font-size: 16px;
-    font-weight: 600;
-    border: #c3cddf 1px solid;
-    background-color: transparent;
-    color: #1f2f44;
-  }
+    .noBiz {
+        margin: auto;
+        width: 90vw;
+    }
 
-  .outerFilterWrapper .filterComponent {
-    margin-top: 5px;
-    background-color: #FFFBF6;
-    padding: 15px;
-    width: 80vw;
-    border-radius: 5px;
-    z-index: 1;
-  }
+    .noBiz img {
+        width: 90vw;
+    }
 
-  .noBiz {
-    margin: auto;
-    width: 90vw;
-  }
+    .card {
+        padding-bottom: 20px;
+    }
 
-  .noBiz img {
-    width: 90vw;
-  }
-
-  .card {
-    padding-bottom: 20px;
-  }
+    .line-breaks {
+        margin: 1rem 5rem;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  .businessCards {
-    margin: auto;
-    width: 90vw;
-    flex-direction: column;
-  }
+    .businessCards {
+        margin: auto;
+        width: 90vw;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .pagination {
-    margin: auto;
-    width: auto;
-  }
+    .pagination {
+        margin: auto;
+        width: auto;
+    }
 
-  .businessesImageWrapper {
-    width: 100%;
-    height: 400px;
-    padding: 20px;
-  }
+    .businessesImageWrapper {
+        width: fit-content;
 
-  .businessesImage {
-    width: 100%;
-    height: 400px;
-  }
+        padding: 20px;
+    }
 
-  .businessDeets {
-    width: 90%;
-    margin-left: 5vw;
-    padding-top: 0;
-    padding-bottom: 15px;
-  }
+    .businessesImage {
+        width: 25rem;
+    }
 
-  .businessDeets h2,
-  .priceSubcat,
-  .searchStars,
-  .todayHours {
-    width: fit-content;
-    margin-top: 0px;
-  }
+    .businessDeets {
+        width: 90%;
+        margin-left: 5vw;
+        padding-top: 0;
+        padding-bottom: 15px;
+        align-items: center;
+    }
 
-  .recent-review-text {
-    inline-size: auto;
-  }
+    .businessDeets h2,
+    .priceSubcat,
+    .searchStars,
+    .todayHours {
+        width: fit-content;
+        margin-top: 0px;
+    }
 
-  .searchPage h1 {
-    margin-left: 5vw;
-  }
+    .recent-review-text {
+        inline-size: auto;
+    }
 
-  .filterButtonWrapper {
-    margin-left: 4vw;
-    padding-bottom: 20px;
-  }
+    .searchPage h1 {
+        margin-left: 5vw;
+    }
 
-  .filterButton {
-    border-radius: 3px;
-    padding: 12px 16px 12px 16px;
-    font-size: 16px;
-    font-weight: 600;
-    border: #c3cddf 1px solid;
-    background-color: transparent;
-    color: #1f2f44;
-  }
+    .filterButtonWrapper {
+        margin-left: 4vw;
+        padding-bottom: 20px;
+    }
 
-  .outerFilterWrapper .filterComponent {
-    margin-top: 5px;
-    background-color: #FFFBF6;
-    padding: 15px;
-    width: 80vw;
-    border-radius: 5px;
-    z-index: 1;
-  }
+    .filterButton {
+        border-radius: 3px;
+        padding: 12px 16px 12px 16px;
+        font-size: 16px;
+        font-weight: 600;
+        border: #c3cddf 1px solid;
+        background-color: transparent;
+        color: #1f2f44;
+    }
 
-  .noBiz {
-    margin: auto;
-    width: 90vw;
-  }
+    .outerFilterWrapper .filterComponent {
+        margin-top: 5px;
+        background-color: #fffbf6;
+        padding: 15px;
+        width: 80vw;
+        border-radius: 5px;
+        z-index: 1;
+    }
 
-  .noBiz img {
-    width: 90vw;
-  }
+    .noBiz {
+        margin: auto;
+        width: 90vw;
+    }
 
-  .card {
-    padding-bottom: 20px;
-  }
+    .noBiz img {
+        width: 90vw;
+    }
+
+    .card {
+        padding-bottom: 20px;
+    }
+
+    .line-breaks {
+        margin: 1rem 10rem;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .businessCards {
-    width: auto;
-    flex-direction: column;
-  }
+    .businessCards {
+        width: auto;
+        flex-direction: column;
+    }
 
-  .pagination {
-    /* margin-left: auto; */
-    /* margin-right: 2vw; */
-    width: auto;
-  }
+    .pagination {
+        /* margin-left: auto; */
+        /* margin-right: 2vw; */
+        width: auto;
+    }
 
-  .businessesImageWrapper {
-    width: auto;
-    height: 300px;
-    padding: 20px;
-  }
+    .businessesImageWrapper {
+        width: auto;
+        height: 300px;
+        padding: 20px;
+    }
 
-  .businessesImage {
-    width: 100%;
-    height: 300px;
-  }
+    .businessesImage {
+        width: 100%;
+        height: 300px;
+    }
 
-  .businessDeets {
-    width: 90%;
-    margin-left: 3vw;
-    padding-top: 0;
-    padding-bottom: 15px;
-  }
+    .businessDeets {
+        width: 90%;
+        margin-left: 3vw;
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
 
-  /* .businessDeets h2,
+    /* .businessDeets h2,
   .priceSubcat,
   .searchStars,
   .todayHours {
@@ -451,14 +476,13 @@ select {
   }
   */
 
-  .searchPage {
-    padding-top: 20px;
-    width: 90vw;
-    margin: auto;
-  }
+    .searchPage {
+        padding-top: 20px;
+        width: 90vw;
+        margin: auto;
+    }
 
-  .noBiz {
-    margin-left: auto;
-  }
-
+    .noBiz {
+        margin-left: auto;
+    }
 }

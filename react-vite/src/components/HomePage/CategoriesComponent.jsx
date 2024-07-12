@@ -27,7 +27,7 @@ function CategoriesComponent() {
 
             <div className="categoryContainer">
                 
-                <div onClick={() => handleCategories(1)}>
+                <div className="cat_box cat_1" onClick={() => handleCategories(1)}>
                     <Link
                         value={category}
                         onClick={(e) => setCategory(e.target.value)}
@@ -41,7 +41,7 @@ function CategoriesComponent() {
                 </div>
 
 
-                <div onClick={() => handleCategories(2)}>
+                <div className="cat_box cat_2" onClick={() => handleCategories(2)}>
                     <Link
                         value={category}
                         onClick={(e) => setCategory(e.target.value)}
@@ -55,7 +55,7 @@ function CategoriesComponent() {
                 </div>
 
             
-                <div onClick={() => handleCategories(3)}>
+                <div className="cat_box cat_3" onClick={() => handleCategories(3)}>
                     <Link
                         value={category}
                         onClick={(e) => setCategory(e.target.value)}
@@ -69,7 +69,7 @@ function CategoriesComponent() {
                 </div>
 
 
-                <div onClick={() => handleCategories(4)}>
+                <div className="cat_box cat_4" onClick={() => handleCategories(4)}>
                     <Link
                         value={category}
                         onClick={(e) => setCategory(e.target.value)}
@@ -83,7 +83,7 @@ function CategoriesComponent() {
                 </div>
 
 
-                <div onClick={() => handleCategories(5)}>
+                <div className="cat_box cat_5" onClick={() => handleCategories(5)}>
                     <Link
                         value={category}
                         onClick={(e) => setCategory(e.target.value)}
@@ -97,7 +97,7 @@ function CategoriesComponent() {
                 </div>
 
 
-                <div onClick={() => handleCategories(6)}>
+                <div className="cat_box cat_6" onClick={() => handleCategories(6)}>
                     <Link
                         value={category}
                         onClick={(e) => setCategory(e.target.value)}
@@ -111,7 +111,7 @@ function CategoriesComponent() {
                 </div>
 
 
-                <div onClick={() => handleCategories(7)}>
+                <div className="cat_box cat_7" onClick={() => handleCategories(7)}>
                     <Link
                         value={category}
                         onClick={(e) => setCategory(e.target.value)}
@@ -125,7 +125,7 @@ function CategoriesComponent() {
                 </div>
 
 
-                <div onClick={() => handleCategories(8)}>
+                <div className="cat_box cat_8" onClick={() => handleCategories(8)}>
                     <Link
                         value={category}
                         onClick={(e) => setCategory(e.target.value)}

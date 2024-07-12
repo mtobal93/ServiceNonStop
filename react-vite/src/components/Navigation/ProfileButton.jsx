@@ -7,7 +7,7 @@ import { thunkLogout } from "../../redux/session";
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
-import { BsFilePersonFill } from "react-icons/bs";
+import { HiLogout } from "react-icons/hi";
 
 function ProfileButton() {
     const navigate = useNavigate();
@@ -81,10 +81,10 @@ function ProfileButton() {
                                             closeMenu();
                                     }}
                                 >
-                                    <BsFilePersonFill />
-                                    &nbsp; About Me
+                                    <i className="fa-regular fa-address-card" />
+                                    &nbsp;&nbsp; About Me
                                 </div>
-                                <hr />
+
                                 <div
                                     className="profiledropdownoptions"
                                     onClick={() => {
@@ -92,10 +92,10 @@ function ProfileButton() {
                                             closeMenu();
                                     }}
                                 >
-                                    <i className="fa-solid fa-store" />
-                                    &nbsp; Add a Company
+                                    <i className="fa-solid fa-warehouse" />
+                                    &nbsp;&nbsp; Add a Company
                                 </div>
-                                <hr />
+
                                 <div
                                     className="profiledropdownoptions"
                                     onClick={() => {
@@ -103,16 +103,16 @@ function ProfileButton() {
                                             closeMenu();
                                     }}
                                 >
-                                    <i className="fa-solid fa-pen-to-square" />
-                                    &nbsp; Manage Companies
+                                    <i className="fa-solid fa-list-check" />
+                                    &nbsp;&nbsp; Manage  &nbsp;&nbsp;&nbsp;Companies
                                 </div>
-                                <hr />
+
                                 <div
                                     className="profiledropdownoptions"
                                     onClick={logout}
                                 >
-                                    <i className="fa-solid fa-arrow-right-from-bracket" />
-                                    &nbsp; Log Out{" "}
+                                    <HiLogout />
+                                    &nbsp;&nbsp; Log Out{" "}
                                 </div>
                             </>
                         ) : (

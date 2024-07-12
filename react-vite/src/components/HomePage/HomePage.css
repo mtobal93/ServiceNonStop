@@ -112,6 +112,9 @@
     text-align: center;
     font-size: 38px;
 
+    animation:flipInY;
+    animation-duration: 2s;
+    
 }
 
 
@@ -141,3 +144,45 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+.cat_box {
+    animation:fadeIn;
+    animation-duration: 3s;
+}
+
+/* .cat_1 {
+    animation:fadeIn;
+    animation-duration: 2s;
+
+}
+.cat_2 {
+    animation:fadeIn;
+    animation-duration: 2s;
+}
+.cat_3 {
+    animation:fadeIn;
+    animation-duration: 2s;
+}
+.cat_4 {
+    animation:fadeIn;
+    animation-duration: 2s;
+}
+.cat_5 {
+    animation:fadeIn;
+    animation-delay: 2s;
+}
+.cat_6 {
+    animation:fadeIn;
+    animation-duration: 2s;
+}
+.cat_7 {
+    animation:fadeIn;
+    animation-duration: 2s;
+
+}
+.cat_8 {  
+
+    animation:fadeIn;
+    animation-duration: 2s;
+
+} */

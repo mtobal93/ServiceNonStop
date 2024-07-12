@@ -53,7 +53,7 @@ function SearchFormPage() {
 
         for (let i = 0; i < parseInt(numStars); i++) {
             filledStars.push(
-                <span className="paws-filled" style={{ fontSize: "large" }}>
+                <span className="paws-filled" style={{ fontSize: "small" }}>
                     <i className="fa-solid fa-hammer" />
                     &nbsp;
                 </span>
@@ -74,7 +74,7 @@ function SearchFormPage() {
             );
         } else if (remainder > 0.79) {
             filledStars.push(
-                <span className="paws-filled" style={{ fontSize: "large" }}>
+                <span className="paws-filled" style={{ fontSize: "small" }}>
                     <i className="fa-solid fa-hammer" />
                     &nbsp;
                 </span>
@@ -86,7 +86,7 @@ function SearchFormPage() {
                 emptyStars.push(
                     <span
                         className="paws-unfilled"
-                        style={{ fontSize: "large" }}
+                        style={{ fontSize: "small" }}
                     >
                         <i className="fa-solid fa-hammer" />
                         &nbsp;
@@ -98,7 +98,7 @@ function SearchFormPage() {
                 emptyStars.push(
                     <span
                         className="paws-unfilled"
-                        style={{ fontSize: "large" }}
+                        style={{ fontSize: "small" }}
                     >
                         <i className="fa-solid fa-hammer" />
                         &nbsp;
@@ -218,28 +218,23 @@ function SearchFormPage() {
                     <div className="loader"></div>
                 ) : companies.length === 0 ? (
                     <>
-                        <h1>
-                            {total} Service Non Stop Results{" "}
-                            {search_query && (
-                                <span>
-                                    for &quot;{search_query}&quot;&nbsp;
-                                </span>
-                            )}{" "}
-                            {searchLoc && <span>in {searchLoc}</span>}
-                        </h1>
+                        
                         <FilterComponent
                             onFilterChange={handleFilterChange}
                             isMobile={isMobile}
                             isTablet={isTablet}
                         />
+                        
                         <span className="noBiz">
+                        <h1 className="result-word">Results: </h1>
+                            
                             No results found.
                             <img src="/images/icons/no_result.png" />
                         </span>
                     </>
                 ) : (
                     <>
-                        {total === 1 ? (
+                        {/* {total === 1 ? (
                             <h1>
                                 {total} Service Non Stop Result{" "}
                                 {search_query && (
@@ -259,12 +254,14 @@ function SearchFormPage() {
                                 )}{" "}
                                 {searchLoc && <span>in {searchLoc}</span>}
                             </h1>
-                        )}
+                        )} */}
+
                         <FilterComponent
                             onFilterChange={handleFilterChange}
                             isMobile={isMobile}
                             isTablet={isTablet}
                         />
+                        <h1 className="result">Results: </h1>
                         {companies &&
                             companies.map((company, index) => (
                                 <div className="card" key={company.id}>
@@ -298,7 +295,59 @@ function SearchFormPage() {
                                                         1}
                                                     .&nbsp;{company.name}
                                                 </h2>
-                                                {company.avg_stars &&
+
+                                                {!company.price ? (
+                                                    <p className="priceSubcat">
+                                                        {company.category?.name}
+                                                    </p>
+                                                ) : (
+                                                    <p className="priceSubcat">
+                                                        {company.avg_stars ? (
+                                                            company.num_reviews &&
+                                                            reviewsExists(
+                                                                company.num_reviews
+                                                            ) && (
+                                                                <span className="searchStars">
+                                                                    {company?.avg_stars &&
+                                                                        starReviews(
+                                                                            company.avg_stars
+                                                                        )}
+                                                                    &nbsp;
+                                                                    {company?.avg_stars &&
+                                                                        starsToFixed(
+                                                                            company.avg_stars
+                                                                        )}
+                                                                    &nbsp;
+                                                                    {company.num_reviews >=
+                                                                        1 &&
+                                                                        reviewsExists(
+                                                                            company.num_reviews
+                                                                        )}
+                                                                </span>
+                                                            )
+                                                        ) : (
+                                                            <span>
+                                                                <span
+                                                                    className="paws-unfilled"
+                                                                    style={{
+                                                                        fontSize:
+                                                                            "small",
+                                                                    }}
+                                                                >
+                                                                    <i className="fa-solid fa-hammer" />
+                                                                </span>
+                                                                &nbsp;&nbsp;Be
+                                                                the first to
+                                                                review!
+                                                            </span>
+                                                        )}
+                                                        {/* {company.price}{" "} */}
+                                                        &nbsp;&#183;&nbsp;{" "}
+                                                        {company.category?.name}
+                                                    </p>
+                                                )}
+
+                                                {/* {company.avg_stars &&
                                                     company.num_reviews &&
                                                     reviewsExists(
                                                         company.num_reviews
@@ -320,19 +369,7 @@ function SearchFormPage() {
                                                                     company.num_reviews
                                                                 )}
                                                         </span>
-                                                    )}
-
-                                                {!company.price ? (
-                                                    <p className="priceSubcat">
-                                                        {company.category?.name}
-                                                    </p>
-                                                ) : (
-                                                    <p className="priceSubcat">
-                                                        {company.price}{" "}
-                                                        &nbsp;&#183;&nbsp;{" "}
-                                                        {company.category?.name}
-                                                    </p>
-                                                )}
+                                                    )} */}
 
                                                 {getTodaysHours(company) && (
                                                     <span className="todayHours">
@@ -358,7 +395,19 @@ function SearchFormPage() {
                                                     </span>
                                                 )}
 
-                                                <span className="review-text-wrapper">
+                                                <span>
+                                                    <span
+                                                        style={{
+                                                            fontWeight: "600",
+                                                        }}
+                                                    >
+                                                        Location:
+                                                    </span>
+                                                    &nbsp;{company.city},{" "}
+                                                    {company.state}
+                                                </span>
+
+                                                {/* <span className="review-text-wrapper">
                                                     {company.recent_review_text ? (
                                                         <div className="recent-review-text">
                                                             <i className="fa-regular fa-message fa-flip-horizontal" />
@@ -383,10 +432,11 @@ function SearchFormPage() {
                                                             first to review!
                                                         </span>
                                                     )}
-                                                </span>
+                                                </span> */}
                                             </span>
                                         </>
                                     </Link>
+                                    <hr className="line-breaks" />
                                 </div>
                             ))}
                         {!loading && (
