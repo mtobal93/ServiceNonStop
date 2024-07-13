@@ -34,11 +34,11 @@ function ManageCompanyButton({ company }) {
 
   return (
     <>
-      <button className='manageMenu' onClick={toggleMenu}>
+      <button className='manageMenu' onClick={toggleMenu} >
         <i className="fa-solid fa-ellipsis" />
       </button>
       {showMenu &&
-        <>
+        <div className="manageMenuMod">
           <ul className={ulClassName} ref={ulRef}>
             <div className="profiledropdownoptions">
               <Link to={`/companies/${company.id}/edit`}
@@ -53,7 +53,7 @@ function ManageCompanyButton({ company }) {
               />
             </div>
           </ul>
-        </>
+        </div>
 
 
       }

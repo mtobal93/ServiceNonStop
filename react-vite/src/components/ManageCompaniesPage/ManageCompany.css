@@ -1,310 +1,308 @@
 .manBizCards {
-  display: flex;
-  border: 1px solid #1f2f44;
-  padding: 10px;
-  margin-bottom: 20px;
-  width: fit-content;
-  border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: fit-content;
+    border-radius: 10px;
 }
 
-.manBizCards:hover {
-  box-shadow: 3px 3px 10px .5px;
-}
+
 
 .manBizImage {
-  height: 160px;
-  width: 180px;
-  padding: 10px;
+    height: 160px;
+    width: 180px;
+    padding: 10px;
 }
 
 .manBizPage {
-  margin: auto;
-  padding-top: 30px;
-  max-width: 800px;
+    margin: auto;
+    padding-top: 30px;
+    max-width: 800px;
 }
 
 .manBizPage h1 {
-  width: fit-content;
+    width: fit-content;
 }
 
 .manBizDeets {
-  display: flex;
-  flex-direction: column;
-  text-wrap: wrap;
-  padding: 10px 0 0 20px;
-  width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-wrap: wrap;
+    padding: 10px 0 0 20px;
+    width: 300px;
 }
 
 .bizandbutton {
-  display: flex;
+    display: flex;
+}
+.bizandbutton:hover {
+  border-radius: 10px;
+
+  background-color: #c5dafb5e;
 }
 
 .manage-dropdown {
-  background-color: #FFFBF6;
-  width: fit-content;
-  height: 100px;
-  display: grid;
-  border-radius: 5px;
-  padding: 18px;
-  position: absolute;
+    background-color: white;
+    width: fit-content;
+    height: 100px;
+    display: grid;
+    border-radius: 5px;
+    padding: 18px;
+    position: absolute;
 }
 
 .manage-dropdown button {
-  background-color: transparent;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 500 !important;
-  color: #1f2f44 !important;
-
+    background-color: transparent;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500 !important;
+    color: #1f2f44 !important;
 }
 
+
+
+
+
+
 .manbutton {
-  margin: 0 15px;
+    margin: 0;
 }
 
 .manageMenu {
-  border: 1px solid #1f2f44;
-  border-radius: 50%;
-  color: #1f2f44;
-  background-color: transparent;
-
+    color: #1f2f44;
+    background-color: transparent;
+    font-size: x-large;
+    rotate: 90deg;
+    margin-top: 1.5rem;
 }
 
-.manageMenu:hover {
-  box-shadow: #5f5ba8 1px 1px 5px .5px;
-}
+
 
 .updateBiz {
-  margin: auto;
-  /* border-bottom: #d8c3c3 1px solid; */
+    margin: auto;
+    /* border-bottom: #d8c3c3 1px solid; */
 }
 
 .deleteBiz {
-  margin: auto;
+    margin: auto;
 }
 
 .deleteModal {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
 }
 
 .login-prompt {
-  display: flex;
-  margin: auto;
+    display: flex;
+    margin: auto;
 }
 
 .no-biz {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 @media screen and (max-width: 480px) {
-  .manBizCards {
-    margin: auto;
-    width: 75vw;
-    flex-direction: column;
-  }
+    .manBizCards {
+        margin: auto;
+        width: 75vw;
+        flex-direction: column;
+    }
 
-  .businessesImageWrapper {
-    width: auto;
-    height: 200px;
-  }
+    .businessesImageWrapper {
+        width: auto;
+        height: 200px;
+    }
 
-  .businessesImage {
-    width: 100%;
-    height: 200px;
-  }
+    .businessesImage {
+        width: 100%;
+        height: 200px;
+    }
 
-  .businessDeets {
-    width: 90%;
-    margin-left: 5vw;
-    padding-top: 0;
-    padding-bottom: 15px;
-  }
+    .businessDeets {
+        width: 90%;
+        margin-left: 5vw;
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
 
-  .businessDeets h2,
-  .priceSubcat,
-  .searchStars,
-  .todayHours {
-    width: fit-content;
-    margin-top: 0px;
-  }
+    .businessDeets h2,
+    .priceSubcat,
+    .searchStars,
+    .todayHours {
+        width: fit-content;
+        margin-top: 0px;
+    }
 
-  .recent-review-text {
-    inline-size: 60vw;
-  }
+    .recent-review-text {
+        inline-size: 60vw;
+    }
 
-  .card {
-    padding-bottom: 20px;
-  }
+    .card {
+        padding-bottom: 20px;
+    }
 
-  .bizandbutton {
-    padding-bottom: 20px;
-  }
+    .bizandbutton {
+        padding-bottom: 20px;
+    }
 
-  .manBizPage {
-    width: 90vw;
-  }
+    .manBizPage {
+        width: 90vw;
+    }
 
-  .manbutton {
-    margin: 0 10px;
-  }
+    .manbutton {
+        margin: 0 10px;
+    }
 
-  .manage-dropdown {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin-top: 5px;
-    right: 0;
-    height: fit-content;
-    margin-right: 10px;
-  }
+    .manage-dropdown {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin-top: 5px;
+        right: 0;
+        height: fit-content;
+        margin-right: 10px;
+    }
 
-  .deleteModal {
-    width: 65vw;
-  }
-
+    .deleteModal {
+        width: 65vw;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
+    .manBizCards {
+        margin: auto;
+        width: 75vw;
+        flex-direction: column;
+    }
 
-  .manBizCards {
-    margin: auto;
-    width: 75vw;
-    flex-direction: column;
-  }
+    .businessesImageWrapper {
+        width: auto;
+        height: 300px;
+    }
 
-  .businessesImageWrapper {
-    width: auto;
-    height: 300px;
-  }
+    .businessesImage {
+        width: 100%;
+        height: 300px;
+    }
 
-  .businessesImage {
-    width: 100%;
-    height: 300px;
-  }
+    .businessDeets {
+        width: 90%;
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
 
-  .businessDeets {
-    width: 90%;
-    padding-top: 0;
-    padding-bottom: 15px;
-  }
+    .businessDeets h2,
+    .priceSubcat,
+    .searchStars,
+    .todayHours {
+        width: fit-content;
+        margin-top: 0px;
+    }
 
-  .businessDeets h2,
-  .priceSubcat,
-  .searchStars,
-  .todayHours {
-    width: fit-content;
-    margin-top: 0px;
-  }
+    .recent-review-text {
+        inline-size: auto;
+    }
 
-  .recent-review-text {
-    inline-size: auto;
-    ;
-  }
+    .card {
+        padding-bottom: 20px;
+    }
 
-  .card {
-    padding-bottom: 20px;
-  }
+    .bizandbutton {
+        padding-bottom: 20px;
+    }
 
-  .bizandbutton {
-    padding-bottom: 20px;
-  }
+    .manBizPage {
+        width: 90vw;
+    }
 
-  .manBizPage {
-    width: 90vw;
-  }
+    .manbutton {
+        margin: 0 10px;
+    }
 
-  .manbutton {
-    margin: 0 10px;
-  }
+    .manage-dropdown {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin-top: 5px;
+        right: 0;
+        height: fit-content;
+        margin-right: 50px;
+    }
 
-  .manage-dropdown {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin-top: 5px;
-    right: 0;
-    height: fit-content;
-    margin-right: 50px;
-  }
-
-  .deleteModal {
-    width: 65vw;
-  }
-
+    .deleteModal {
+        width: 65vw;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .manBizCards {
-    margin: auto;
-    width: 75vw;
-    flex-direction: column;
-  }
+    .manBizCards {
+        margin: auto;
+        width: 75vw;
+        flex-direction: column;
+    }
 
-  .businessesImageWrapper {
-    width: auto;
-    height: 300px;
-  }
+    .businessesImageWrapper {
+        width: auto;
+        height: 300px;
+    }
 
-  .businessesImage {
-    width: 100%;
-    height: 300px;
-  }
+    .businessesImage {
+        width: 100%;
+        height: 300px;
+    }
 
-  .businessDeets {
-    width: 90%;
-    padding-top: 0;
-    padding-bottom: 15px;
-    position: relative;
+    .businessDeets {
+        width: 90%;
+        padding-top: 0;
+        padding-bottom: 15px;
+        position: relative;
+    }
 
-  }
+    .businessDeets h2,
+    .priceSubcat,
+    .searchStars,
+    .todayHours {
+        width: fit-content;
+        margin-top: 0px;
+    }
 
-  .businessDeets h2,
-  .priceSubcat,
-  .searchStars,
-  .todayHours {
-    width: fit-content;
-    margin-top: 0px;
-  }
+    .recent-review-text {
+        inline-size: auto;
+    }
 
-  .recent-review-text {
-    inline-size: auto;
-  }
+    .card {
+        padding-bottom: 20px;
+    }
 
-  .card {
-    padding-bottom: 20px;
-  }
+    .bizandbutton {
+        padding-bottom: 20px;
+    }
 
-  .bizandbutton {
-    padding-bottom: 20px;
-  }
+    .manBizPage {
+        width: 90vw;
+    }
 
-  .manBizPage {
-    width: 90vw;
-  }
+    .manbutton {
+        margin: 0 10px;
+    }
 
-  .manbutton {
-    margin: 0 10px;
-  }
+    .manage-dropdown {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin-top: 5px;
+        right: 0;
+        height: fit-content;
+        margin-right: 5vw;
+    }
 
-  .manage-dropdown {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin-top: 5px;
-    right: 0;
-    height: fit-content;
-    margin-right: 5vw;
-  }
-
-  .deleteModal {
-    width: 65vw;
-  }
-
+    .deleteModal {
+        width: 65vw;
+    }
 }

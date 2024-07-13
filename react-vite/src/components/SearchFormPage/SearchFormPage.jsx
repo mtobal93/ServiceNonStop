@@ -218,16 +218,14 @@ function SearchFormPage() {
                     <div className="loader"></div>
                 ) : companies.length === 0 ? (
                     <>
-                        
                         <FilterComponent
                             onFilterChange={handleFilterChange}
                             isMobile={isMobile}
                             isTablet={isTablet}
                         />
-                        
+
                         <span className="noBiz">
-                        <h1 className="result-word">Results: </h1>
-                            
+                            <h1 className="result-word">Results: </h1>
                             No results found.
                             <img src="/images/icons/no_result.png" />
                         </span>

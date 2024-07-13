@@ -1,6 +1,6 @@
 
 import "./ShareModal.css";
-import { FacebookShareButton, FacebookIcon, TwitterIcon, TwitterShareButton, EmailShareButton, EmailIcon } from "react-share";
+import { FacebookShareButton, FacebookIcon, TwitterIcon, TwitterShareButton, EmailShareButton, EmailIcon, LinkedinIcon, LinkedinShareButton, WhatsappShareButton, WhatsappIcon } from "react-share";
 
 function ShareModal() {
     const url = location.href;
@@ -17,17 +17,32 @@ function ShareModal() {
             <h1>Recommend the Company with people you know</h1>
             <div className="shareOptions">
                 <div className="shareIcons">
-                    <FacebookShareButton
+
+                    <LinkedinShareButton
                         url={url}
                     >
-                        <FacebookIcon size={32} round />
-                    </FacebookShareButton>
+                            <LinkedinIcon size={32} round/>
+                    </LinkedinShareButton>
 
                     <TwitterShareButton
                         url={url}
                     >
                         <TwitterIcon size={32} round />
                     </TwitterShareButton>
+
+
+                    <FacebookShareButton
+                        url={url}
+                    >
+                        <FacebookIcon size={32} round />
+                    </FacebookShareButton>
+
+                    <WhatsappShareButton
+                        url={url}
+                    >
+                        <WhatsappIcon size={32} round />
+                    </WhatsappShareButton>
+
 
                     <EmailShareButton
                         url={url}
