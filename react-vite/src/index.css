@@ -1,5 +1,14 @@
 /* TODO: Add sitewide styles */
 
+:root {
+    overflow:scroll;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style-type: none;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
@@ -40,7 +49,7 @@ textarea {
     background-color: #fffbf6;
     font-family: "Poppins", sans-serif;
     color: #1f2f44;
-    border-radius: 3px;
+    border-radius: 8px;
     border: #c3cddf solid 1px;
     resize: none;
 }
@@ -48,14 +57,15 @@ textarea {
 input,
 textarea,
 select {
-    padding: 5px;
+    padding: 10px;
+    margin: 5px;
 }
 
 input button {
     background-color: #fffbf6;
     font-family: "Poppins", sans-serif;
     color: #1f2f44;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     border: #c3cddf solid 1px;
 }
 
