@@ -21,7 +21,9 @@ function Footer() {
                                     className="footer-a"
                                 >
                                     <i className="fa-brands fa-js fa-lg" />
-                                </a>
+                                </a>  
+
+                                
 
                                 <a
                                     href="https://react.dev/"
